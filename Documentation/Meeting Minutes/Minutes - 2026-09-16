@@ -1,0 +1,59 @@
+Meeting Minutes
+
+9/16/18
+
+1<sup>st</sup> meeting with advisor Dr. Blair to discuss scope of project.
+
+1\. Meeting Schedule for Project Status
+
+Bi - weekly meeting 3-4 pm CST with Dr. Blair
+
+2\. Project Schedule
+
+Ghantt chart
+
+3\. Setting Requirements
+
+Need from ME Project
+
+- Design mount for radar, arm to extend microphone and/or camera away from drone
+- Needs to be light weight (3D printed), can be telescoping arm
+
+**Main Focuses for Sub Teams**
+
+No preference for software
+
+1. Radar & Communications - _Weston & Allison_
+   1. Heart rate and respiratory rate using LFM waveform
+      1. Put through FFT and sent back to command station
+   2. Determine the range for heart and respiratory rate
+   3. Determine methods of communication already equipped to drone and what was used last year
+   4. Determine what data can be sent back and forth from drone to command station?
+   5. Determine if we want to store the data or use life feed
+      1. ethics perspective how to protect peoples medical data. NO name associated with info then not associated with HIPPA
+      2. what is value of data after event and why it would be relevant?
+      3. hard drive?
+2. Power & Payload - _Brandon & Ryan_
+   1. Determine how much power is needed for the system (Raspberry pie, video, audio, etc.)
+      1. Power assessment of all sources
+   2. What is the range for the radar?
+   3. Determine payload weight and including all electronic components and extendable arm
+3. Noise, Camera, Microphone - _Sidney_
+   1. Determine the best way to attach a camera, speaker, and microphone to be able to communicate with people
+   2. Determine how to filter out noise from drone by finding the frequency of drone
+      1. Potentially use extendable arm to help limit noise with microphone
+      2. Can use microphone to test the noise coming off the drone to develop filter
+   3. Camera: no resolution requirements, needs to be able to see facial expressions of person
+   4. Microphone/Speaker: speak to person and allow them to speak back
+4. Drone Specifications - _Ryan_
+   1. Learn all specs about drone (Aurelia X4 Standard - Ready to Fly)
+   2. Up to 3.3lb payload
+   3. Determine what "can be fully customized" means
+
+TO-DO
+
+- Send Dr. Blair who is responsible for each sub team within 2 weeks. Research topics to assigned area and report. Design around drone.
+- Comms on drone, pre-equipped?
+- Get in contact with Dr. Strom to see drone
+- Determine sub teams
+- Ask what the budget is for project
