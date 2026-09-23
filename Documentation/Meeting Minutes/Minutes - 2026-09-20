@@ -1,0 +1,43 @@
+Meeting 9/20 - Sunday Meeting
+
+Radar/communication
+
+- Can we use built in radar for drone?
+- Has predetermined flight path option built into drone
+- Software for drone is open source, easier to use 3rd party
+- Can use front facing camera built into drone
+  - Did they opt for drone package with built in camera
+- Radiomaster TX16S used to control drone
+
+Power/Payload
+
+- 1.5 kg available for payload
+- Speaker attached to leg of drone and sensors on opposite side to balance center of gravity (CG)
+- 100 g of payload 0.6 gram/meter
+- 10 Ah 6s battery
+- avg current draw from Jetson is 2A
+- avg power draw from electronic components is 12 -19 W
+- based off min and max of various datasheets
+- range of operating temperatures should be taken into consideration 14 - 131 degrees Fahrenheit
+
+Noise, Camera, Microphone
+
+- no current updates
+- research temperature concerns
+
+Drone Specifications
+
+- 7.5 in of ground clearance
+- lidar system is focused downward and located on motor 2
+- can route own radar into flight controller
+- can transmit data pretty quick, including audio
+- open source software
+- what model did the past team opt with?
+
+&nbsp;
+
+What is our budget for the whole project?
+
+- what sources of funding do we have?
+
+&nbsp;
