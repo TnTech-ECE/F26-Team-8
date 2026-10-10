@@ -17,12 +17,12 @@
 * [IV. Specifications & Measures of Success](#iv-specifications--measures-of-success)
 * [V. Constraints](#v-constraints)
 * [VI. Survey of Existing Solutions & Relevant Literature](#vi-survey-of-existing-solutions--relevant-literature)
-  * [A. Radar - Weston LaRue](#a-radar)
-  * [B. Image Processing – Sidney Delgado](#b-image-processing)
-  * [C. Deep Learning for Object Detection - Ryan Lee](#c-deep-learning-for-object-detection)
-  * [D. UAV Path Planning – Ryan Lee](#d-uav-path-planning)
-  * [E. Power & Payload - Brandon Price](#e-power--payload)
-  * [F. Communications – Allison Wolden](#f-communications)
+  * [A. Radar](#a-radar)
+  * [B. Image Processing](#b-image-processing)
+  * [C. Deep Learning for Object Detection](#c-deep-learning-for-object-detection)
+  * [D. UAV Path Planning](#d-uav-path-planning)
+  * [E. Power & Payload](#e-power--payload)
+  * [F. Communications](#f-communications)
 * [VII. Timeline & Budget](#vii-timeline--budget)
 * [VIII. Personnel](#viii-personnel)
 * [IX. Broader Implications, Ethics, and Responsibility as Engineers](#ix-broader-implications-ethics-and-responsibility-as-engineers)
@@ -162,7 +162,7 @@ In [16], a lightweight YOLO model deployed on an embedded Jetson module demonstr
 2. Train and fine-tune YOLO using SAR datasets to improve small target recognition in complex environments.
 3. Establish hierarchical trigger systems to flag candidate coordinates using visual detection, radar, and acoustic verification to improve detection confidence [16].
 
-Additional model comparisons and sensor fusion strategies will be explored in future iterations of the system design.
+*Additional model comparisons and sensor fusion strategies will be explored in future iterations of the system design.*
 
 ### D. UAV Path Planning
 
@@ -192,7 +192,7 @@ Tang et al. [17] evaluated contemporary navigation and detection integration str
 2. Utilize active radar and acoustic sensors to maintain navigation integrity in low-visibility environments [17].
 3. Incorporate identification and pathfinding techniques that consider environmental lighting and visual angles.
 
-Additional path-planning models will be explored in future iterations of the system design.
+*Additional path-planning models will be explored in future iterations of the system design.*
 
 ### E. Power & Payload
 *(Content pending)*
@@ -205,7 +205,7 @@ Additional path-planning models will be explored in future iterations of the sys
 
 ## VII. Timeline & Budget
 
-*(Gantt Chart representation based on project schedule)*
+![Gantt Chart](https://github.com/TnTech-ECE/F26-Team-8/blob/main/Reports/Project%20Proposal/GanttChart.png)
 
 | Item | Predicted Quantity | Predicted Total Cost | Justification |
 | :--- | :---: | :---: | :--- |
