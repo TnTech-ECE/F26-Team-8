@@ -17,12 +17,12 @@
 * [IV. Specifications & Measures of Success](#iv-specifications--measures-of-success)
 * [V. Constraints](#v-constraints)
 * [VI. Survey of Existing Solutions & Relevant Literature](#vi-survey-of-existing-solutions--relevant-literature)
-  * [A. Radar - Weston LaRue](#a-radar---weston-larue)
-  * [B. Image Processing – Sidney Delgado](#b-image-processing--sidney-delgado)
-  * [C. Deep Learning for Object Detection - Ryan Lee](#c-deep-learning-for-object-detection---ryan-lee)
-  * [D. UAV Path Planning – Ryan Lee](#d-uav-path-planning--ryan-lee)
-  * [E. Power & Payload - Brandon Price](#e-power--payload---brandon-price)
-  * [F. Communications – Allison Wolden](#f-communications--allison-wolden)
+  * [A. Radar - Weston LaRue](#a-radar)
+  * [B. Image Processing – Sidney Delgado](#b-image-processing)
+  * [C. Deep Learning for Object Detection - Ryan Lee](#c-deep-learning-for-object-detection)
+  * [D. UAV Path Planning – Ryan Lee](#d-uav-path-planning)
+  * [E. Power & Payload - Brandon Price](#e-power--payload)
+  * [F. Communications – Allison Wolden](#f-communications)
 * [VII. Timeline & Budget](#vii-timeline--budget)
 * [VIII. Personnel](#viii-personnel)
 * [IX. Broader Implications, Ethics, and Responsibility as Engineers](#ix-broader-implications-ethics-and-responsibility-as-engineers)
@@ -108,7 +108,7 @@ The design for the Triage Drone must fall within the constraints set by governin
 
 ## VI. Survey of Existing Solutions & Relevant Literature
 
-### A. Radar - Weston LaRue 
+### A. Radar
 
 #### General Overview
 Non-contact vital sign monitoring with radar has gained substantial attention due to the availability of both low-cost radar devices and computationally efficient algorithms for processing their measurements. The importance of this measurement for a triage drone will be prioritizing victims during emergency searches based on vital readings. Non-contact measurements are necessary when dealing with emergency reconnaissance and the well-being of the victims.
@@ -121,7 +121,7 @@ Radar-based non-contact vital sign monitoring comes with many different consider
 * Implementing onboard processing to reduce latency and improve real-time responsiveness.
 * Proper data handling to follow HIPAA regulations and information privacy laws.
 
-### B. Image Processing – Sidney Delgado 
+### B. Image Processing
 
 #### General Overview 
 The image processing system needs to improve the images captured by the drone. Reliable images are important for helping the search team identify victims during emergency situations. To achieve this, the camera needs to capture clear, high-quality images and video. When weather or lighting conditions affect image quality, image enhancement may be used to improve visibility. The system must also process images promptly so the search team can receive information while emergencies are taking place. The image processing system needs to be compatible with the rest of the components in the system. Weather and other environmental conditions can limit the ability to capture clear images and identify victims accurately. 
@@ -134,7 +134,7 @@ The image processing system needs to improve the images captured by the drone. R
 * Environmental restraints such as dust, rain, and physical obstructions can reduce image quality and disrupt image enhancement. 
 * Images must be processed quickly enough to provide useful information during search-and-rescue operations.
 
-### C. Deep Learning for Object Detection - Ryan Lee
+### C. Deep Learning for Object Detection
 
 #### General Overview
 To perform effective search and rescue (SAR) operations without high-bandwidth video surveillance, autonomous systems use onboard deep learning models such as YOLO (You Only Look Once) to identify potential victims that may be obscured by surrounding objects. Incorporating such a model on computing platforms like the Jetson Nano enables precision diagnostic capabilities that are critical for time-sensitive operations [16].
@@ -164,7 +164,7 @@ In [16], a lightweight YOLO model deployed on an embedded Jetson module demonstr
 
 Additional model comparisons and sensor fusion strategies will be explored in future iterations of the system design.
 
-### D. UAV Path Planning – Ryan Lee
+### D. UAV Path Planning
 
 #### General Overview
 To achieve autonomous navigation with minimal operator input, SAR drones require robust path-planning architecture that can adapt to dynamic environments [16]. This process comes with an array of possible approaches and challenges that have been reviewed in [17]. For this system to be effective, it must reach potential victims quickly and safely regardless of difficult terrain.
@@ -194,10 +194,10 @@ Tang et al. [17] evaluated contemporary navigation and detection integration str
 
 Additional path-planning models will be explored in future iterations of the system design.
 
-### E. Power & Payload - Brandon Price
+### E. Power & Payload
 *(Content pending)*
 
-### F. Communications – Allison Wolden 
+### F. Communications
 * Communications between Jetson Nano and sensors, and communication between Jetson Nano and PC.
 * Go through the drone or 3rd party option (data link Jetson Nano).
 
