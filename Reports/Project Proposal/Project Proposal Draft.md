@@ -84,9 +84,11 @@ The drone will retain many aspects from the research of previous teams, but our 
    * **Measure of success:** The system shall correctly classify predefined expressions in at least 80% of labeled test cases under the specified lighting and visibility conditions.
 4. The system shall support two-way audio communication between the victim and the remote command center.
    * **Measure of success:** The system shall successfully transmit and receive at least 80% of predefined test messages under specified operating conditions.
+5. 
    * **Measure of success:** The fully equipped system shall complete a test flight lasting at least the minimum mission duration of 15 minutes with sufficient battery reserve to land safely.
-5. The system shall maintain its required functions under specified environmental conditions.
+6. The system shall maintain its required functions under specified environmental conditions.
    * **Measure of success:** The system shall complete a controlled test under a defined wind speed and visibility level, remain functional, and pass a defined moisture-exposure test.
+7. 
    * **Measure of success:** Testing shall verify that unauthorized users cannot access protected data.
 
 ---
