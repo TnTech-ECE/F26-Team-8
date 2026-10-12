@@ -83,13 +83,13 @@ The drone will retain many aspects from the research of previous teams, but our 
 3. The system shall attempt to identify predefined facial expressions when the victim's face is sufficiently visible.
    * **Measure of success:** The system shall correctly classify predefined expressions in at least 80% of labeled test cases under the specified lighting and visibility conditions.
 4. The system shall support two-way audio communication between the victim and the remote command center.
-   * **Measure of success:** The system shall successfully transmit and receive at least 80% of predefined test messages under specified operating conditions.
-5. 
-   * **Measure of success:** The fully equipped system shall complete a test flight lasting at least the minimum mission duration of 15 minutes with sufficient battery reserve to land safely.
-6. The system shall maintain its required functions under specified environmental conditions.
+   * **Measure of success:** The system shall successfully transmit and receive at least 80% of predefined test messages under specified operating conditions. 
+5. The system shall maintain its required functions under specified environmental conditions.
    * **Measure of success:** The system shall complete a controlled test under a defined wind speed and visibility level, remain functional, and pass a defined moisture-exposure test.
-7. 
-   * **Measure of success:** Testing shall verify that unauthorized users cannot access protected data.
+6. The drone shall supply sufficient power to the system without exceeding limits. 
+   * **Measure of success:** The fully equipped system shall complete a test flight lasting at least the minimum mission duration of 15 minutes with sufficient battery reserve to land safely.
+7. The system shall restrict access to victims’ information and health data to unauthorized users.  
+   * **Measure of success:** Testing shall verify that unauthorized users cannot access protected data.   
 
 ---
 
