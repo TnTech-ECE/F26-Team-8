@@ -202,12 +202,15 @@ The Aurelia X4 must carry every added component and still complete the mission. 
 
 ### F. Communications
 #### General Overview
-Adequate data needs to be transmitted to perform triage properly. This is accomplished through the use of the Jetson Nano and sensors to gather the data for a certain victim. The Jetson Nano then uses Wi-Fi protocol to transmit the gathered data to a PC which is then able to be interpreted by the user. 
+Adequate data needs to be transmitted to perform triage properly. This is accomplished through the use of the Jetson nano and multiple sensors to gather the data for a certain victim. The Jetson nano can use Bluetooth, Wifi, Ethernet, Cellular, LoRa (long range, low bandwidth IoT) to transmit data over a variety of distances. To accommodate all the sensors for the team's design, they will need a bandwidth of about 17 Mbps.  
+
+Bluetooth will not work because of the short range and ethernet would only be applicable for bench testing. LoRa has very long range and can easily transmit GPS and vitals' data. LoRa does not have the capability to transmit audio or video. Wifi will work for a shorter range of ~100 meters. A benefit is that it is cheap and has the ability to transmit video and audio.  
 
 #### Key Considerations
-* Proper data handling to follow HIPAA regulations and information privacy laws.
-* The range of transmission using the EW-7611ULB V2 is 10m – 30m. 
-* Expand upon the considerations regarding best practices to connect sensors and other components to the Jetson Nano.
+* Proper data handling to follow HIPAA regulations and information privacy laws. 
+* The communication range is important because of the rugged environments the device will be placed in.  
+* Power consumption plays a big role in which the device is most effective while still meeting the requirements set by Dr. Blair.  
+* The video feed needs to be clear enough to see facial expressions.  
 
 ---
 
