@@ -76,33 +76,61 @@ The drone will retain many aspects from the research of previous teams, but our 
 ---
 
 ## IV. Specifications & Measures of Success
-1. The system shall detect and locate potential victims within a 6-foot radius.
+1. The system shall detect and locate potential victims within a 6-foot radius horizontal radius of the point directly below the drone while hovering at 6-8 ft above the ground level. 
    * **Measure of success:** The system shall correctly detect and locate a test subject in at least 80% of trials involving partial visual obstruction or other specified interference.
-2. The system shall attempt to measure heart rate and respiration rate using selected sensors.
-   * **Measure of success:** The system shall be compared against reference instruments, and the system shall meet an 80% accuracy tolerance for each sensor before testing. 
-3. The system shall attempt to identify predefined facial expressions when the victim's face is sufficiently visible.
+   * **Verification method:** Test
+   * **Stakeholders need:** First responders need to locate victims quickly in debris or low visibility areas  
+2.  The system shall attempt to measure heart rate and respiration rate using non-contact sensors at a standoff distance of 1 – 2 m. 
+   * **Measure of success:** Heart rate readings shall be within ±5 bpm or ±10% of a reference pulse oximeter or chest-strap ECG, whichever is greater. Respiration rate readings shall be within ±3 breaths per minute of a manual reference count. Each shall meet this tolerance in at least 80% of 20 readings on a subject at rest.
+   * **Verification method:** Test
+   * **Stakeholders need:** Triage personnel need vital signs to prioritize victims
+3. The system shall attempt to identify predefined facial expressions when at least 75% of the victim's face is visible. 
    * **Measure of success:** The system shall correctly classify predefined expressions in at least 80% of labeled test cases under the specified lighting and visibility conditions.
-4. The system shall support two-way audio communication between the victim and the remote command center.
-   * **Measure of success:** The system shall successfully transmit and receive at least 80% of predefined test messages under specified operating conditions. 
-5. The system shall maintain its required functions under specified environmental conditions.
-   * **Measure of success:** The system shall complete a controlled test under a defined wind speed and visibility level, remain functional, and pass a defined moisture-exposure test.
-6. The drone shall supply sufficient power to the system without exceeding limits. 
+   * **Verification method:** Test
+   * **Stakeholders need:** Responders need to assess the victim's level of consciousness and distress.
+4. The system shall support two-way audio communication between the victim and the remote command center. 
+   * **Measure of success:** The system shall successfully transmit and receive at least 80% of predefined test messages under specified operating conditions.
+   * **Verification method:** Test
+   * **Stakeholders need:** With arrival of the drone, the audio of the distressed individual must be heard clearly as well as our feedback must be clearly heard by the individual.  
+5. The system shall maintain its required functions under specified environmental conditions such as winds, light rain, and low visibility. 
+   * **Measure of success:** The system shall complete a controlled test under a defined wind speed and visibility level, remain functional, and pass a defined moisture-6 exposure test.
+   * **Verification method:** Test
+   * **Stakeholders need:** Disaster response often takes place in poor condition.
+6. The drone shall supply sufficient power to the full payload without exceeding the limits of the battery’s rated continuous discharge current. 
    * **Measure of success:** The fully equipped system shall complete a test flight lasting at least the minimum mission duration of 15 minutes with sufficient battery reserve to land safely.
-7. The system shall restrict access to victims’ information and health data to unauthorized users.  
-   * **Measure of success:** Testing shall verify that unauthorized users cannot access protected data.   
-
+   * **Verification method:** Test
+   * **Stakeholders need:** Responders need enough flight time to search for and assess victims.
+7. The system shall restrict access to victims’ information and health data to unauthorized users as live reporting will be displayed by the control center where authorized personnel will diagnose and assess the data given on hand.  
+   * **Measure of success:** Testing shall verify that unauthorized users cannot access protected data where 100% of the unauthorized access attempts are failed.
+   * **Verification method:** Test and Inspection
+   * **Stakeholders need:** Victims privacy must be protected as required by health privacy regulations. 
 ---
 
 ## V. Constraints
-The design for the Triage Drone must fall within the constraints set by governing bodies such as the FAA, IEEE, HHS, etc. The constraints are as follows:
-* The drone **SHALL** remain under 400 ft above ground level [12][14].
-* The drone **SHALL** not exceed 100 mph [12][14].
-* The drone **SHALL** be equipped with anti-collision lighting [12][14].
-* The drone **SHALL** weigh under 55 lbs [12][14].
+The design for the Triage Drone must fall within the constraints set by governing bodies such as the FCC, FAA, IEEE, HHS, Ul, IEC, as well as Sponsor and test site requirements. The constraints are as follows: 
+* The drone **SHALL** remain under 400 ft above ground level per 14 CFR §107.51.[12][14] This limit shall be enforced in the flight controller firmware.  
+* The drone **SHALL** not exceed a ground speed of 87 knots (100 mph) per 14 CFR §107.51 [12][14]. This limit shall be enforced in the flight controller firmware. 
+* The drone **SHALL** be equipped with anti-collision lighting visible for at least 3 statute miles for night and civil twilight operations per 14 CFR §107.29 [12][14]. The lighting must be included in the weight and the power budget. 
+* The drone **SHALL** weigh under 55 lbs. at takeoff, including payload and batteries, per 14 CFR §107.3 [12][14]. This sets the mass budget for sensors and batteries.  
+* The drone **SHALL** remain within the visual line of sight of the remote pilot in command per 14 CFR §107.31 [12]. This limits mission range and supports the human oversight requirement in Constraint 9. 
+* The drone **SHALL** comply with Remote ID requirements per 14 CFR Part 89 [24], using built-in Remote ID or a broadcast module included in the weight and power budget. 
+* The drone **SHALL** meet the requirements for operations over people per 14 CFR Part 107 Subpart D [25], including having no exposed rotating parts that could lacerate human skin. Propeller guards or ducted fans shall be used, and a minimum hover offset shall be maintained above victims.
+* Flight testing in controlled airspace **SHALL** obtain FAA airspace authorization per 14 CFR §107.41 (for example, through LAANC) [12].
 * The drone **SHALL** utilize encrypted wireless communication conforming to IEEE 802.11 standards for control and data transmission [18].
+* All radio transmitters **SHALL** be FCC-certified devices operating in unlicensed bands within the power limits of 47 CFR Part 15, including §15.247 for 2.4 GHz and 5.8 GHz transmitters [26]. Antennas and transmit power shall not be modified beyond their certified configuration.
+* Onboard electronics **SHALL** meet the unintentional radiator emission limits of 47 CFR part 15 Subpart B [26].
 * The EMI test setup **SHALL** maintain all measurement tolerances within the limits specified by MIL-STD-461G § 4.3.1 [19].
-* The system **SHALL** operate at an autonomy level functionally equivalent to SAE J3016 Level 3, where the drone can perform mission tasks under limited conditions while maintaining continuous human oversight [20].
-* The drone **SHALL** not store health information or associate such data with any individuals (HIPAA compliance).
+* Lithium batteries **SHALL** comply with the IEC 62133-2 or UL 2054 safety requirements [27] and SHALL meet UN 38.3 if shipped [35].
+* The drone's electrical system **SHALL** be designed following ANSI/UL 3030 for unmanned aircraft systems [29].
+* The system’s moisture protection **SHALL** be rated and tested per IEC 60529 [22].
+* The system **SHALL** not store health information onboard or associate such data with any identified individual. Vital sign and image data SHALL only be transmitted, encrypted, to the command center and tagged with an anonymous victim ID rather than a name.
+  * HIPAA Privacy and Security Rules, 45 CFR Parts 160 and 164 [30], apply when the drone is operated by a covered entity such as an EMS agency.
+* The system SHALL operate at an autonomy level functionally equivalent to SAE J3016 Level 3, where the drone can perform mission tasks under limited conditions while maintaining continuous human oversight [20].
+* Testing involving human subjects for vital sign and facial expression measurements SHALL be reviewed by the university Institutional Review Board (IRB) or receive a documented exemption before testing begins [31].
+* The project SHALL be completed within the sponsor budget of $1,000 and by the final demonstration date of Spring 2027, and all flight testing SHALL follow university flight and test site policies.
+* The drone and its UAS critical components (flight controller, communication and data transmission systems, ground control station, navigation system, batteries, and motors) SHALL not be equipment on the FCC Covered List, unless they were previously FCC-authorized or have been exempted through the Department of War Blue UAS Cleared List or an FCC Conditional Approval [27]. All components shall be checked against the Covered List before purchase, and any modification to the drone’s radio or communication hardware shall be reviewed to confirm it does not require a new FCC equipment authorization.
+* The drone radar SHALL fit within the 57.0–59.4 GHz sub-band [39].
+* The drone radar SHALL stay below the peak power limit of 30 dBm EIRP [39]. 
 
 ---
 
@@ -251,6 +279,7 @@ The Triage Drone team is composed of the following five electrical engineering s
 ---
 
 ## IX. Broader Implications, Ethics, and Responsibility as Engineers
+## References: [20]-[25]
 
 ### Safety
 The general idea of the triage drone is to reduce the risk to human responders on search and rescue related missions. These drones are particularly sent to sites where access is limited or would place the human responder's own life at risk. With technical advantages there are many to consider but with such a technological approach also brings the idea of malfunction and accidents related to such. When and if malfunctions happen, there would be a delay created and potential loss of safety for the responder. Another consideration to be made is the safety of the drone as well. What environments will the drone need to withstand and what are the worst cases the drone may be placed in? How can we protect the external components and the drone?
@@ -356,6 +385,20 @@ As engineers, the team’s first duty is to hold public safety, health, and welf
 23. R. Hoek Spaans et al., “Ethical considerations related to drone use for environment and health research: a scoping review,” *Royal Society Open Science*, vol. 13, no. 2, 251530, 2026.
 24. National Society of Professional Engineers, *NSPE Code of Ethics for Engineers*.
 25. IEEE, *IEEE Code of Ethics*, IEEE Policies, Section 7.8.
+26. Health Insurance Portability and Accountability Act of 1996, Pub. L. 104-191, Aug. 21, 1996. 
+27. “List of Equipment and Services Covered by Section 2 of the Secure Networks Act,” Federal Communications Commission, Mar. 09, 2021. https://www.fcc.gov/supplychain/coveredlist (accessed Oct. 21, 2026). 
+28. Association for the Advancement of Medical Instrumentation, ANSI/AAMI EC13: Cardiac Monitors, Heart Rate Meters, and Alarms, Arlington, VA. 
+29. International Electrotechnical Commission, IEC 60529: Degrees of Protection Provided by Enclosures (IP Code), Geneva, Switzerland. 
+30. Wi-Fi Alliance, WPA3 Specification, Austin, TX. 
+31. Electronic Code of Federal Regulations, “14 CFR Part 89: Remote Identification of Unmanned Aircraft.” Available: https://www.ecfr.gov/current/title-14/chapter-I/subchapter-F/part-89 
+32. Electronic Code of Federal Regulations, “14 CFR Part 107, Subpart D: Operations Over Human Beings.” Available: https://www.ecfr.gov/current/title-14/chapter-I/subchapter-F/part-107/subpart-D 
+33. Electronic Code of Federal Regulations, “47 CFR Part 15: Radio Frequency Devices.” Available: https://www.ecfr.gov/current/title-47/chapter-I/subchapter-A/part-15 
+34. International Electrotechnical Commission, IEC 62133-2: Secondary Cells and Batteries Containing Alkaline or Other Non-Acid Electrolytes – Safety Requirements – Part 2: Lithium Systems, Geneva, Switzerland; UL, UL 2054: Household and Commercial Batteries, Northbrook, IL. 
+35. United Nations, Manual of Tests and Criteria, Part III, Section 38.3: Lithium Metal and Lithium Ion Batteries, New York and Geneva. 
+36. UL, ANSI/UL 3030: Standard for Unmanned Aircraft Systems, Northbrook, IL. 
+37. Electronic Code of Federal Regulations, “45 CFR Parts 160 and 164: HIPAA Privacy and Security Rules.” Available: https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C 
+38. Electronic Code of Federal Regulations, “45 CFR Part 46: Protection of Human Subjects.” Available: https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-A/part-46 
+39. Federal Communications Commission, "Amendment of section 15.255 of the commission’s rules for operation of radar systems in the 57-71 GHz band," FCC Report and  Order, FCC 23-35, Jul. 2023. 
 
 ---
 
