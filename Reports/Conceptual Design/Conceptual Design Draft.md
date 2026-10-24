@@ -67,7 +67,7 @@ Traditional ground-based triage approaches rely on human responders physically r
 * **Separation of Search and Treatment:** A triage drone can transfer the initial detection and vital-sign screening tasks to a semi-autonomous system that does not necessarily require trained medical personnel for operation. This means that medical personnel can maintain focus on the treatment of high-priority victims whilst drone operation is placed upon individuals without extensive medical training.
 
 ### C. Sensors, Peripherals, and their Functional Roles
-To execute non-contact assessment and remote navigation, the triage drone integrates a suite of specialized sensors and peripherals:
+To execute non-contact assessment and remote navigation, the triage drone integrates a suite of specialized sensors and peripherals: 
 
 * **Single-Board Computer (SBC)**
     * **Function:** Serves as the onboard CPU responsible for controlling connected sensors and processing sensor data.
@@ -77,12 +77,12 @@ To execute non-contact assessment and remote navigation, the triage drone integr
     * **Role:** The module will handle the bandwidth required to stream quality sensor and media data for remote triage.
 * **Telescoping Arm**
     * **Function:** An extension mechanism designed in coordination with a mechanical engineering senior design team.
-    * **Role:** Extends the physical reach of the drone's sensor payload to enhance the Radar Module's operational distance, overcome the drone's acoustic noise for the Acoustic Array, and provide enhanced video footage.
+    * **Role:** Extends the physical reach of the drone's sensor payload to enhance the Radar Module's operational distance, overcome the drone's acoustic noise for the Acoustic Array, and provide enhanced video footage. 
 * **Radar Module**
     * **Function:** Operates as a non-contact vital sign monitor from a specified standoff distance.
     * **Role:** Serves as the primary physiological assessment tool, capable of obtaining vital signs through degraded visual conditions such as smoke, dust, or partial physical obstruction.
 * **Acoustic Array**
-    * **Function:** A filtered microphone and speaker array to converse with victims.
+    * **Function:** A filtered microphone and speaker array to converse with victims. 
     * **Role:** Establishes two-way voice interaction between the victim and remote operator, allowing responders to gather verbal feedback such as name, reported pain, injury details, and victim responsiveness.
 * **Optical Cameras**
     * **Function:** Captures live environmental video feeds.
@@ -94,12 +94,12 @@ To execute non-contact assessment and remote navigation, the triage drone integr
     * **Function:** Receives satellite signals for positional tracking and stability.
     * **Role:** Integrated into the drone and provides basic geographic coordinate tracking during operator-guided flights to communicate victim location.
 
-These sensors, including what specific models were selected and their precise functionality, will be expanded in later sections of this design. Note that future iterations of this design will likely include automated object detection (such as machine learning vision models) and fully autonomous path planning. These functions have been considered and are intentionally omitted from the current design scope and will be deferred to a future team.
+These sensors, including what specific models were selected and their precise functionality, will be expanded in later sections of this design. Note that future iterations of this design will likely include automated object detection (such as machine learning vision models) and fully autonomous path planning. These functions have been considered and are intentionally omitted from the current design scope and will be deferred to a future team. 
 
 ### D. Previous Designs and Iterative Evolution
-The current Triage Drone project builds upon three consecutive capstone design iterations that progressively evolved from an original DARPA challenge framework into an integrated flight platform:
+The current Triage Drone project builds upon three consecutive capstone design iterations that progressively evolved from an original DARPA challenge framework into an integrated flight platform: 
 
-1. **Foundational DARPA Challenge Sensing Prototype (Spring 2023 Team):** The earliest iteration strictly focused on tackling the DARPA Triage Challenge (DTC) by designing a standalone, non-contact vital sign and cognition testing system. Because of time and resource constraints, this team established and operated on a benchtop model that was modeled after a DJI Matrice 300 RTK weight budget of $2.7\text{ kg}$ (about $6\text{ pounds}$) to prove the viability of a Doppler radar for heart/respiratory rates and voice activity detection under the START triage model, leaving physical drone iterations for future groups [29].
+1. **Foundational DARPA Challenge Sensing Prototype (Spring 2023 Team):** The earliest iteration strictly focused on tackling the DARPA Triage Challenge (DTC) by designing a standalone, non-contact vital sign and cognition testing system. Because of time and resource constraints, this team established and operated on a benchtop model that was modeled after a DJI Matrice 300 RTK weight budget of 2.7 kg (about 6 pounds) to prove the viability of a Doppler radar for heart/respiratory rates and voice activity detection under the START triage model, leaving physical drone iterations for future groups [29].
 2. **Initial Drone Adaptation & Baseline Architecture (Fall 2024 Team):** Building on the sensing concepts built by the previous team, the Fall 2024 team established preliminary specifications using the Parrot ANAFI Ai within a theoretical design scope. Like the previous group, their work centered on component studies and baseline processing rather than physical flight integration [30].
 3. **Modular Refinement & Airframe Selection (Fall 2025 Team):** The subsequent iteration shifted the design focus toward a high-payload, open-source platform, specifically selecting and designing around the Aurelia X4 Standard airframe. While they established the architecture and conducted simulation for a radar module, acoustic array, LiDAR system, and payload weight limits, physical flight integration and testing remained uncompleted due to time and resource constraints [31].
 
@@ -118,28 +118,28 @@ The current team is now in possession of the Aurelia X4 Standard and will be int
 ---
 
 ## III. Fully Formulated Problem
-Capstone Team 8 has been assigned the Triage drone project. The project's customer and advisor is Doctor W. Dale Blair of Georgia Tech, whose professional background includes radar systems, systems engineering and target tracking. Doctor Christopher "Storm" Johnson of Tennessee Tech serves as the faculty advisor and project manager. The team has been tasked with modifying and adapting the Aurelia X4 standard drone so that it can respond to disaster areas where human rescuers have limited access or would be placed at risk. The modified drone must locate victims, perform a preliminary non-contact assessment of their condition, and relay the information to a remote command center. All of this must be accomplished within the regulatory, technical, and ethical constraints described within this document.
+Capstone Team 8 has been assigned the Triage drone project. The project's customer and advisor is Doctor W. Dale Blair of Georgia Tech, whose professional background includes radar systems, systems engineering and target tracking. Doctor Christopher "Storm" Johnson of Tennessee Tech serves as the faculty advisor and project manager. The team has been tasked with modifying and adapting the Aurelia X4 standard drone so that it can respond to disaster areas where human rescuers have limited access or would be placed at risk. The modified drone must locate victims, perform a preliminary non-contact assessment of their condition, and relay the information to a remote command center. All of this must be accomplished within the regulatory, technical, and ethical constraints described within this document. 
 
 ### Objective and Scope
-The objective of the project is to deliver a semi-autonomous triage drone built on the Aurelia X4 Standard platform that can:
-* Navigate a predefined search area using GPS waypoints while avoiding obstacles with Lidar. 
+The objective of the projects to deliver a semi-autonomous triage drone built on the Aurelia X4 Standard platform that can: 
+* Navigate a predefined search area using GPS waypoints while avoiding obstacles with Lidar.
 * Detect and locate potential victims, including victims who are partially obscured.
-* Measure heart rate and respiration rate without contact using radar. Classify predefined facial expressions using onboard cameras. 
+* Measure heart rate and respiration rate without contact using radar. Classify predefined facial expressions using onboard cameras.
 * Provide two-way audio communication between a victim and the command center.
-* Operate with/in moderate wind, low visibility, and moisture exposure. 
-* Complete a minimum 15-minute mission on the shared flight battery. 
-* Protect victim data from unauthorized access and avoid storing health information.
+* Operate with/in moderate wind, low visibility, and moisture exposure.
+* Complete a minimum 15-minute mission on the shared flight battery.
+* Protect victim data from unauthorized access and avoid storing health information. 
 
 **In Scope:** Integration of The Jetson Nano, radar module, 3 IMX 219 cameras, re-speaker microphone array and speaker, mm wave radar, GPS, Wi-Fi adapter and PETG mounts onto the X4 onboard signal and image processing the data linked to the command center, Power Distribution and system level testing.
 
-**Out of Scope:** Mechanical design and modeling of the extendable arm and the 3D printed mounting components which are the responsibility of the Mechanical Engineers senior design team. 
+**Out of Scope:** Mechanical design and modeling of the extendable arm and the 3D printed mounting components which are the responsibility of the Mechanical Engineers senior design team. 
 
 ### Customer Objective
-Dr. Blair's desired outcome is a drone that rapidly canvasses a disaster area and relays casualty locations and health metrics to medical teams, reducing the time and risk borne by human responders. The performance requirements below (S1–S7) define what that outcome means in measurable terms, and the customer guidance also governs design trade-offs such as the power consumption of the communication system. Because Dr. Blair's background is radar and target tracking [13], radar-based vital sensing and reliable victim localization are central to meeting his expectations.
+Dr. Blair's desired outcome is a drone that rapidly canvasses a disaster area and relays casualty locations and health metrics to medical teams, reducing the time and risk borne by human responders. The performance requirements below (S1–S7) define what that outcome means in measurable terms, and the customer guidance also governs design trade-offs such as the power consumption of the communication system. Because Dr. Blair's background is radar and target tracking [13], radar-based vital sensing and reliable victim localization are central to meeting his expectations. 
 
 ### Performance Specifications
 * **(S1)** The system SHALL detect and locate potential victims within a 6-foot radius.
-    * *Measure of success:* The system shall correctly detect and locate a test subject in at least 80% of trials involving partial visual obstruction or other specified interference.
+    * *Measure of success:* The system shall correctly detect and locate a test subject in at least 80% of trials involving partial visual obstruction or other specified interference. 
     * *Origin:* Customer requirement and project goal.
 * **(S2)** The system SHALL attempt to measure the heart rate and respiration rate using selected sensors.
     * *Measure of success:* The system shall be compared against reference instruments, and the system shall meet an 80% accuracy tolerance for each sensor before testing.
@@ -181,7 +181,7 @@ Dr. Blair's desired outcome is a drone that rapidly canvasses a disaster area an
 ---
 
 ## IV. Comparative Analysis of Potential Solutions
-In this section, various potential solutions are hypothesized, design considerations are discussed, and factors influencing the selection of a solution are outlined. The chosen solution is then identified with justifications for its selection. 
+In this section, various potential solutions are hypothesized, design considerations are discussed, and factors influencing the selection of a solution are outlined. The chosen solution is then identified with justifications for its selection.  
 
 ### A. Control Systems
 While designing the control system, the team decided between using the default transmitter, a mobile device, and PC system. The control system will be used to communicate between the drone and command center as well as transmitting data gathered from our sensors.  
@@ -190,7 +190,7 @@ While designing the control system, the team decided between using the default t
 
 ![Radiomaster TX16S](ConceptualDesignPictures/ControlSystems1.png)
 
-This 16-channel transmitter is included with the Aurelia X4 standard drone therefore it is a low cost solution. This transmitter can be programmed from a PC using OpenTX Companion and is best suited for control over flight. There are 2 UART ports included that can be used for GPS, Bluetooth, and other serial devices, allowing the team to have live GPS updates from the drone as well as support Bluetooth connection for the Single Board Computer.  
+This 16-channel transmitter is included with the Aurelia X4 standard drone therefore it is a low cost solution. This transmitter can be programmed from a PC using OpenTX Companion and is best suited for control over flight. There are 2 UART ports included that can be used for GPS, Bluetooth, and other serial devices. Allowing the team to have live GPS updates from the drone as well as support Bluetooth connection for the Jetson nano.  
 * **Pros:** Easy to use, cost-friendly; best option for in-flight control
 * **Cons:** Does not support camera and microphone feed. 
 
@@ -207,8 +207,8 @@ Handheld device used to program flight paths, set waypoints, and view live telem
 ![PC System](ConceptualDesignPictures/ControlSystems3.png)
 
 Personal laptop to program flight controls, view live telemetry, and set waypoints. All collected data can be wirelessly transmitted to the laptop and processed.  
-* **Pros:** Easy to program, program made to be used on PC interface, Cost-friendly 
-* **Cons:** Not compact, Implementation may be more complicated 
+* **Pros:** Easy to program, program made to be used on PC interface, cost-friendly 
+* **Cons:** Not compact, implementation may be more complicated 
 
 #### Control System Solution
 The ideal solution is a combination of the PC and transmitter system. The PC will be used to determine flight path, radio settings, and analyzing sensor data. The transmitter will only be used for flying the drone and will not be receiving or transmitting any data from aftermarket components.  
@@ -221,15 +221,15 @@ The Radar systems that are usable for heart rate monitoring are very limited. Th
 ![Infineon Demo BGT60UTR11AIP](ConceptualDesignPictures/RadarSystems1.png)
 
 The Infineon Demo BGT60UTR11AIP radar sensor is a 60GHz Frequency Modulated Continuous Wave (FMCW) radar; however, it also possesses the capability to operate in a Continuous Wave (CW) mode. The sensor is attached to an Infineon Radar Baseboard MCU7 Plus which is roughly 3 inches by 1 inch and weighs less than a gram. It can be operated via pins on the board or through a micro-USB connection. Infineon provides an extensive SDK for using this technology as well as a ready-to-go GUI. 
-* **Pros:** Uses 60GHz Continuous Waves for reliable readings and has capabilities to use both FMCW and CW doppler waveforms.
+* **Pros:** Uses 60GHz Continuous Waves for reliable readings and has capabilities to use both FMCW and CW doppler waveforms. 
 * **Cons:** Limited on range and resolution.
 
 #### Texas Instruments AWR1843 Radar Sensor
 ![Texas Instruments AWR1843](ConceptualDesignPictures/RadarSystems2.png)
 
 The Texas Instruments AWR1843 radar is an integrated single-chip FMCW radar sensor capable of operation in the 76 to 81GHz band. It is built on TI’s low-power 45nm RFCMOS process, which enables a monolithic implementation of a 3TX, 4RX system with built-in PLL and ADC converters. The device includes a BIST processor subsystem, which is responsible for radio configuration, control, and calibration. 
-* **Pros:**  Has a higher frequency range of FMCW waveforms that will penetrate skin less and relay more information. Has built in processing into the board that creates a cleaner signal.
-* **Cons:** The radar is the costliest option and requires more power than the other options. 
+* **Pros:** Has a higher frequency range of FMCW waveforms that will penetrate skin less and relay more information. Has built in processing into the board that creates a cleaner signal.
+* **Cons:** The radar is the costliest option and requires more power than the other options.
 
 #### Radar System Solution 
 The best of the options is the Infineon Demo BGT60UTR11AIP radar sensor because of its lesser power consumptions, smaller form factor, and more affordable price. The 60GHz range of the radar makes it more than viable for its purpose.  
@@ -259,23 +259,23 @@ The Waveshare IMX219-83 Stereo Camera uses a dual-camera system to estimate dept
 
 Waveshare IMX219-83 Stereo Camera uses a dual-camera system that can estimate depth and width, which helps locate The Arducam IMX477 HQ Camera is compatible with the Jetson Nano. The camera supports interchangeable lenses and has a field of view of 65 degrees. It has 12.3 megapixels. This camera improves image detail for identifying people in the captured footage. 
 * **Pros:** Compatible with Jetson Nano. Higher image resolution. Improves visual tracking and human detection. Interchangeable lenses.
-* **Cons:** Does not measure distance. The standard lens has a narrower horizontal field of view, maxing out at 65 degrees. Additional lenses are needed for a wider field of view. The high resolution might increase image-processing demand.  
+* **Cons:** Does not measure distance. The standard lens has a narrower horizontal field of view, maxing out at 65 degrees. Additional lenses are needed for a wider field of view. The high resolution might increase image-processing demand.    
 
 #### Human Locating System Solution
 The sensor chosen for human locating was the Yahboom IMX219 160-degree camera. This device lacks depth perception but offers broader scene coverage and requires less processing power than the other options. Higher processing power increases the likelihood of lag. 
 
 ### D. Communication Systems
-In the team's design, they implemented two communication systems. One of the communication systems is dedicated to the data transfer between the Single Board Computer and a personal laptop. The second system is dedicated to human communication. To achieve this, the team will implement a speaker and microphone to communicate with the victim.  
+In the team's design, they implemented two communication systems. One of the communication systems is dedicated to the data transfer between the Jeston nano and a personal laptop. The second system is dedicated to human communication. To achieve this, the team will implement a speaker and microphone to communicate with the victim.   
 
 #### 1. Data Transfer 
-To successfully transmit data from the Jetson Nano to a personal laptop, Allison found solutions in 3 categories. These include Wi-fi/Bluetooth, cellular, ethernet, and long-distance radio communication (LoRa).  
+To successfully transmit data from the Jetson nano to a personal laptop, Allison found solutions in 3 categories. These include Wi-fi/Bluetooth, cellular, ethernet, and long-distance radio communication (LoRa).  
 
 **EDIMAX N150**
 
 ![EDIMAX N150](ConceptualDesignPictures/DataTransfer1.png)
 
-Supports both Wi-Fi and Bluetooth connections that are compatible with the Jetson Nano. It operates with speeds up to 150Mbps. It comes with built-in network security and is compatible with both Windows and Linux. The range for the EDIMAX N150 is 10-30 meters. It is capable of transmitting radar data, camera feed, and microphone data.  
-* *Pros:* Jetson Nano compatible, Does not require bulky aftermarket attachments, lightweight
+Supports both Wi-Fi and Bluetooth connections that are compatible with the Jetson nano. It operates with speeds up to 150Mbps. It comes with built-in network security and is compatible with both Windows and Linux. The range for the EDIMAX N150 is 10-30 meters. It is capable of transmitting radar data, camera feed, and microphone data.  
+* *Pros:* Jetson Nano compatible, does not require bulky aftermarket attachments, lightweight
 * *Cons:* Short range.
 
 **Intel AC8265 Wireless NIC**
@@ -291,7 +291,7 @@ Supports both Wi-fi and Bluetooth connections that are compatible with the Jetso
 ![GNSS](ConceptualDesignPictures/DataTransfer3.png)
 
 Supports 4G cellular communication and is compatible with the Jetson nano. The range is 5000 meters. Is capable of transmitting video, microphone, and radar data over very long distances. This option is significantly more complicated to integrate with our current system. The component itself will reduce our available payload compared to other options.  
-* *Pros:* Long range.
+* *Pros:* Long range
 * *Cons:* Difficult to integrate and set up, weight of component
 
 **LoRa (Long Range Radio)**
@@ -300,7 +300,7 @@ Supports 4G cellular communication and is compatible with the Jetson nano. The r
 
 Supports long range radio communication that is suitable for sending images in clusters. This will allow the camera feed to be transmitted over long distances. The range is 300 meters. This gives the longest range with the lowest cost. It can transmit microphone, radar, and video. The video feed would be grey scale and sent in small clusters. 
 * *Pros:* Long range, low cost, lightweight.
-* *Cons:* Lower quality video, susceptible to external noise interference.
+* *Cons:* Lower quality video, external noise can affect transmission of data
 
 ##### Data Transfer System Solution
 The ideal solution for data transfer from Jetson nano to a personal laptop is the Intel AC8265 Wireless NIC Wi-fi adapter. This is because it can transmit high-quality video feed along with all other sensor data. In the case of an extremely rural environment, LoRa will also be equipped to transmit low-quality video in the form of image clusters and all other sensor data.  
@@ -312,7 +312,7 @@ Communication with the victim is a central component of this project. To identif
 
 ![UAC 1.0](ConceptualDesignPictures/HumanCommunication1.png)
 
-The Seeed Studio ReSpeaker 4-Mic Array is a low-power USB microphone array. It features embedded audio processing, voice capture, sound direction detection, and noise suppression. These capabilities are well suited to communicating with potential victims.   
+The Seeed Studio ReSpeaker 4-Mic Array is a low-power USB microphone array. It features embedded audio processing, voice capture, sound direction detection, and noise suppression. These capabilities are well suited to communicating with potential victims.     
 * *Pros:* Has 4 mics to support audio capture and sound direction. Uses USB, so it is compatible with most computing platforms. Has features to suppress unwanted noise and boost voices. Low power consumption.
 * *Cons:* Internal filtering might not be sufficient to reduce drone noise. Speech recognition could be used but would require additional software. A speaker is needed to enable two-way communication.
 **ReSpeaker USB 4-Mic Array XVF3800**
@@ -320,7 +320,7 @@ The Seeed Studio ReSpeaker 4-Mic Array is a low-power USB microphone array. It f
 ![XVF3800](ConceptualDesignPictures/HumanCommunication2.png)
 
 The ReSpeaker XMOS XVF3800 is an updated version of the ReSpeaker 4-Mic Array. It features onboard audio processing, 360-degree voice pickup, echo cancellation, voice activity detection, and noise suppression. 
-* *Pros:* It offers 360-degree sound pickup and sound-source localization to help identify a person’s location. It can pick up voices from up to 5 m away and connect via USB or I2S. It also features echo cancellation and noise suppression.  
+* *Pros:* It offers 360-degree sound pickup and sound-source localization to help identify a person’s location. It can pick up voices from up to 5 m away and connect via USB or I2S. It also features echo cancellation and noise suppression.   
 * *Cons:* It is expensive, does not completely eliminate drone noise, and may not support all features on the Jetson Nano; additional hardware may be required.
 
 **RØDE VideoMic Go II:**
@@ -336,7 +336,7 @@ The VideoMic Go II is a compact, lightweight directional microphone with USB-C d
 
 The 2831/3128 mini full-cavity speaker is a compact output speaker designed for tight spaces. 
 * *Pros:* It is compact and lightweight, consumes little power, and its full-range design makes it ideal for voice instructions.
-* *Cons:* It may not be loud enough to overcome the drone noise and may require an amplifier. Clarity isn’t guaranteed under unfavorable conditions.
+* *Cons:* It may not be loud enough to overcome the drone noise and may require an amplifier. Clarity isn’t guaranteed under unfavorable conditions. 
 
 **Yahboom USB Sound Card & Speaker**
 
@@ -352,41 +352,41 @@ The ReSpeaker 4-Mic Array was selected as the microphone because it requires con
 ---
 
 ## V. High-Level Solution
-The Triage Drone integrates a sensing and processing payload onto the Aurelia X4 standard. The X4 Pixhawk flight controller running ArduPilot handles stabilized and semi-autonomous flights. A Jetson Nano serves as the onboard computer controlling the sensors, camera, microphone, and speaker. It runs victim detection and vital sign processing on board so that only live results rather than raw recordings are sent to the command center.
+The Triage Drone integrates a sensing and processing payload onto the Aurelia X4 standard. The X4 Pixhawk flight controller running ArduPilot handles stabilized and semi-autonomous flights. A Jetson Nano serves as the onboard computer controlling the sensors, camera, microphone and speaker. It runs victim detection and vital sign processing on board so that only live results rather than raw recordings are sent to the command center. 
 
 | Subsystem | Selected Solutions | Purpose | Requirements Addressed |
 | :--- | :--- | :--- | :--- |
-| **Drone Platform** | Aurelia X4 Standard with Pixhawk flight controller and ArduPilot | Carries and powers payload, provides stabilized flight, GPS navigation, and return-to-home. | S5, S6, C1–C4, C7 |
-| **Pathfinding & Obstacle Detection** | GPS waypoint navigation via ArduPilot; LiDAR obstacle avoidance | Semi-autonomous flight through predefined search areas, including low visibility. | S5, C7 |
-| **Human Detection** | Two IMX219 cameras on Jetson Nano cross-checked with radar | Detects and locates victims | S1, S3 |
-| **Vital Sensing** | Infineon BGT60UTR11AIP $60\text{ GHz}$ radar | Non-contact heart and respiration rate tracking in $0.1\text{--}3\text{ Hz}$ band | S2 |
-| **Signal Processing & Inferencing** | Onboard processing via Jetson Nano | Filters radar/audio/image data and packages results for transmission | S1–S4, S7 |
-| **Human Communication** | ReSpeaker 4-Mic Array v2.0 + Cavity Speaker ($80\text{--}225\text{ Hz}$ filtered) | Two-way audio between victim and command center | S4 |
-| **Data Transfer** | Encrypted IEEE 802.11 Wi-Fi link (Intel AC8265) / Backup LoRa | Carries live video, audio, vitals, and GPS to command center | S4, S7, C5 |
-| **Control Systems** | Command center PC + Radiomaster TX16S Transmitter | Operator interface for monitoring, flight control, verification, and intervention | C7, S7 |
-| **Power & Circuitry** | Shared flight battery or external payload battery with regulated supply | Powers payload electronics without compromising flight duration or signal quality | S6, C6 |
-| **Mounts & Arm** | PETG 3D-printed mounts and extendable arm (ME Team) | Holds payload, damps vibration, resists moisture/UV | S1, S2, S5 |
+| **Drone Platform** | Aurelia X4 Standard with Pixhawk flight controller and ArduPilot | Carries and powers the payload, provides stabilized flight, GPS navigation and return to home. | S5, S6, C1-C4, C7 |
+| **Pathfinding & Obstacle Detection** | GPS waypoint navigation through ArduPilot combined. Hybrid battery awareness path planning. | Semi-autonomous flight through predefined areas including low visibility. | S5, C7 |
+| **Human Detection** | Two IMX219 cameras running on the Jetson Nano cross-checked with radar. | Detects and locates victims | S1, S3 |
+| **Vital Sensing** | Infineon BGT6OUTR11AIP 60 Hz radar | Non-contact heart rate and reparation rate in the 0.1 - 3 Hz band | S2 |
+| **Signal Processing & Inferencing** | Onboard processing on the Jetson Nano. | Filters radar image and audio data and packages results for transmission. | S1-S4, S7 |
+| **Human Communication** | ReSpeaker Microphone Array v2.0 with a speaker, filtered to the 80-225 Hz | Two-way audio between victims and command center | S4 |
+| **Data Transfer** | Encrypted IEEE 802.11 Wi-Fi link (100 m range, 17 Mbps required) [18]; final selection per the control systems section | Carries live video, audio, vitals, and GPS to the command center | S4, S7, C5 |
+| **Control Systems** | Command center PC; final selection per the Control Systems section | Operator interface for monitoring, verification, and intervention | C7, S7 |
+| **Power & Circuitry** | Shared flight battery with a regulated supply for the Jetson Nano, documented power budget, shielded wiring, and low-battery return to home | Powers all payload electronics without compromising flight time or signal quality | S6, C6 |
+| **Mounts & Arm** | PETG 3D-printed mounts and extendable arm (ME team) [15] | Holds and protects electronics; damps vibration; resist moisture and UV | S5, S1, S2 |
 
 ### Maximizing Stakeholder Goal Attainment 
-Each customer objective maps directly to a subsystem. Radar-based vital sensing reflects Dr. Blair's expertise in non-contact measurements. Combining camera YOLO detection with radar verification improves detection confidence during visual degradation [16]. Two-way audio allows responders to assess victim consciousness. Onboard processing ensures the command center receives real-time metrics without network latency.
+Each of the customer's objective maps to a dedicated subsystem. Radar-based vital sensing reflects Dr. Blair's expertise and provides the non-contact measurements needed to prioritize victims. Combining camera-based YOLO detection with radar verification improves detection confidence when visual data alone is unreliable [16]. Two-way audio lets responders confirm a victim's awareness and identify remotely. Because processing happens on board, the command center receives results in near real time, which supports the goal of saving responders' time.  
 
 ### Adherence to Constraints 
-The design stays within FAA Part 107 limits for altitude, speed, weight, and lighting [12][14]. The $3.3\text{ lb}$ payload limit of the X4 is tracked via a strict mass budget. Data transmission utilizes encrypted IEEE 802.11 [18]. System EMI is verified under MIL-STD-461G [19]. Autonomy is capped at SAE J3016 Level 3 equivalence for continuous human oversight [20]. Data is streamed live without onboard persistence, satisfying C8.
+The design stays within FAA Part 107 limits for altitude, speed, weight, and lighting [12][14]. Because the X4 3.3 lb. payload limit is far stricter than the 55 lb. regulatory limits, the payload mass is tracked as a design budget. The data link uses encrypted IEEE 802.11 communication [18]. Interference between the power system and the radar and audio subsystems is measured under MILSTD-461G [19]. The autonomy level is capped at SAE J3016 Level 3 equivalence so that an operator maintains continuous oversight [20]. Results are streaming live, and nothing is saved on the drone, so the design satisfies C8. 
 
 ### Risk Minimization 
 | Risk | Mitigation in Design |
 | :--- | :--- |
-| **Payload exceeds 3.3 lb limit** | Strict mass budget maintained for every component, mount, wire, and fastener. |
-| **Flight time below 15 mins** | Component power budget enforced; Jetson power modes optimized; hover energy budgeted. |
-| **Jetson resets during motor current spikes** | Regulated buck supply sized to ride through takeoff/gust transients. |
-| **Motor noise corrupts radar/audio** | Shielded power wiring, software FIR notch filtering, and MIL-STD-461G testing. |
-| **Camera degraded by smoke/fog** | Radar and LiDAR provide non-visual detection and obstacle avoidance [17]. |
-| **Lost link or low battery** | Automatic Return-to-Home (RTH) triggered with safe battery reserve. |
-| **False "no vital signs" reading** | Readings displayed with confidence levels; operator verification mandatory. |
-| **Unauthorized data access** | Encrypted link, command PC access control, and zero local data storage. |
+| **Payload exceeds 3.3 lb limit** | Mass budget maintained for every component, mount, wire, and fastener. |
+| **Flight time below 15 mins** | Power budget per component; Jetson Nano power mode selected to fit the budget; hover time including in the energy budget. |
+| **Jetson Nano resets during motor current spikes** | Regulated supply sized to ride through take-off and gust transients. |
+| **Motor and converter noise corrupts radar/audio** | Routed and shielded power wiring EMI verification under MIL-STD-461G. |
+| **Camera degraded by smoke, fog, or low light** | Radar and Lidar provide non-visual sensing for detection and navigation [17]. |
+| **Lost link or low battery** | Automatic return-to-home with a reserve for safe landing. |
+| **False "no vital signs" reading** | Human operator verifies readings, which are displayed with confidence levels. |
+| **Unauthorized data access** | Encrypted link, access control on the command PC, and no stored data |
 
 ### Resource Utilization 
-Major hardware assets (Aurelia X4, Jetson Nano, ReSpeaker array, LiDAR, GPS) are already owned by the team. The projected purchase cost is $54 for two additional IMX219 cameras and PETG filament. The design builds upon prior capstone iterations [8][9] using COTS modular components for cheap and fast replacement.
+Most major components are already owned by the team, including the X4, Jetson Nano, ReSpeaker array, Lidar, and GPS. The projected purchase cost is $54, covering two additional IMX219 cameras and PETG filament. The design builds on the research and parts lists of previous capstone teams [8][9] rather than starting over. Commercial off-the-shelf parts and a modular mounting design allow damaged components to be replaced individually and cheaply. 
 
 ---
 
