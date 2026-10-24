@@ -213,6 +213,8 @@ Personal laptop to program flight controls, view live telemetry, and set waypoin
 #### Control System Solution
 The ideal solution is a combination of the PC and transmitter system. The PC will be used to determine flight path, radio settings, and analyzing sensor data. The transmitter will only be used for flying the drone and will not be receiving or transmitting any data from aftermarket components.  
 
+---
+
 ### B. Radar Systems 
 The Radar systems that are usable for heart rate monitoring are very limited. The options for types of radar signals are pulse, pulse doppler, Continuous Wave (CW) doppler, and frequency modulated continuous wave (FMCW). For measuring heart rate and respiratory signals, CW waveforms are the best option for the most reliable data.  
 
@@ -233,6 +235,8 @@ The Texas Instruments AWR1843 radar is an integrated single-chip FMCW radar sens
 
 #### Radar System Solution 
 The best of the options is the Infineon Demo BGT60UTR11AIP radar sensor because of its lesser power consumptions, smaller form factor, and more affordable price. The 60GHz range of the radar makes it more than viable for its purpose.  
+
+---
 
 ### C. Human Locating Systems
 The location system would help visually locate the victim and establish contact. The Yahboom IMX219 camera, the Waveshare IMX219-83 Stereo Camera, and the Arducam IMX477 HQ Camera are all possible candidates for the location system. 
@@ -263,6 +267,8 @@ Waveshare IMX219-83 Stereo Camera uses a dual-camera system that can estimate de
 
 #### Human Locating System Solution
 The sensor chosen for human locating was the Yahboom IMX219 160-degree camera. This device lacks depth perception but offers broader scene coverage and requires less processing power than the other options. Higher processing power increases the likelihood of lag. 
+
+---
 
 ### D. Communication Systems
 In the team's design, they implemented two communication systems. One of the communication systems is dedicated to the data transfer between the Jeston nano and a personal laptop. The second system is dedicated to human communication. To achieve this, the team will implement a speaker and microphone to communicate with the victim.   
@@ -304,6 +310,8 @@ Supports long range radio communication that is suitable for sending images in c
 
 ##### Data Transfer System Solution
 The ideal solution for data transfer from Jetson nano to a personal laptop is the Intel AC8265 Wireless NIC Wi-fi adapter. This is because it can transmit high-quality video feed along with all other sensor data. In the case of an extremely rural environment, LoRa will also be equipped to transmit low-quality video in the form of image clusters and all other sensor data.  
+
+---
 
 #### 2. Human Communication
 Communication with the victim is a central component of this project. To identify an appropriate solution, five sensors were evaluated: three for capturing audio from the victim, the ReSpeaker 4-mic Array, the ReSpeaker XMOS XVF3800, and the RØDE VideoMic Go II, and two for communicating with the victim: the 2831/3128 mini full-range cavity speaker and the Yahboom USB sound card and speaker for Raspberry Pi/Jetson/RDK series boards. 
@@ -509,7 +517,7 @@ This subsystem must comply with electrical, environmental, and federal standards
 
 The signal processing subsystem is the main pipeline for obtaining readable and reliable data from the vitals subsystem and the human detection subsystem. This subsystem is internal to the single board computer, which will receive all sensor data from the sensors and process into usable data, prepared for being transmitted to the control center. The signal processing will be completed by means of digital processing techniques.  
 
-**Subsystem Operation **
+**Subsystem Operation**
 
 The signal processing subsystem will receive three separate inputs: the radar, microphone, and camera. The radar and microphone signals are the priority for the signal processing subsystem. For the radar signal, the subsystem will apply a finite impulse response (FIR) low-pass filter that will cut off any unwanted frequencies greater than 5 Hz; all the desired vital readings will occur below this frequency range [36]. After filtering, the signal will then be down sampled to 10-20 Hz to reduce computational load while retaining all relevant physiological information [37]. To acquire the heart rate sensor, a FIR band-pass filter will be applied that allows frequencies between 0.8-3.0 Hz. A similar filter will be applied to the respiratory signal with the allowed frequencies being between 0.13-1.0 Hz [37].  
 
@@ -528,8 +536,9 @@ Power | Power & Circuitry Design | DC Power | Input | Battery Bus | Drone batter
 **Specifications:**
 The specifications for the subsystem are as follows: 
 1. The signal processing subsystem SHALL use digital signal processing techniques [36].
-   a. to determine respiratory rate (range 0.13 to 1.0 Hz)
-   b. heart rate (range 0.8 to 3.0 Hz). 
+   * to determine respiratory rate (range 0.13 to 1.0 Hz)
+   * to determine heart rate (range 0.8 to 3.0 Hz).
+2. The signal processing subsystem SHALL extract vital signs from at least one meter away [13]. 
 3. DSP SHALL complete within 500ms per update cycle [37]. 
 4. The subsystem SHALL operate using data samples at 100-200Hz [37]. 
 5. The subsystem SHALL perform all DSP steps locally aboard the Aurelia X4 drone [13]. 
@@ -556,6 +565,7 @@ The interfacing subsystem details the relationship between each component used i
 **Interfacing:**
 
 | Interface | Connected Subsystems | Type | Direction | Protocol/Standard | Description |
+| :--- | :--- | :--- | :--- | :--- | :--- |
 | Single Board Computer (SBC) | Signal Processing | Serial | Input | USB | Maintains a processed data stream between the SBC and wireless transmitter. |
 | Power | Power & Circuitry Design | DC Power | Input | Battery Bus | Drone battery provides power to the telemetry system. |
 | Wireless Communication | Data Transfer | DC Power | Bidirectional | NGFF (M.2) | Maintains data stream between SBC and PC. |
@@ -590,6 +600,7 @@ The human detection subsystem will use the Yahboom IMX219 camera to capture vide
 **Interfacing:**
 
 | Interface | Connected Subsystems | Type | Direction | Protocol/Standard | Description |
+| :--- | :--- | :--- | :--- | :--- | :--- |
 | Single Board Computer (SBC) | Signal Processing | Serial | Output | MIPI CSI-2 | Receives data from the cameras and processes all the data to be transmitted to the control center. |
 | Power | Power & Circuitry Design | DC Power | Input | Battery Bus | Drone battery provides power to the cameras. |
 
@@ -603,7 +614,7 @@ The specifications for the subsystem are as follows:
 
 **Flowchart**
 
-![Human Detection Flowchart](ConceptualDesignPictures/HumanDetectionFlow.png)
+![Human Detection Flowchart](ConceptualDesignPictures/HumanDetectionFlow.PNG)
 
 **Applicable Standards** 
 
@@ -623,6 +634,7 @@ This subsystem will remain off until the drone has come to a standstill and the 
 **Interfacing:**
 
 | Interface | Connected Subsystems | Type | Direction | Protocol/Standard | Description |
+| :--- | :--- | :--- | :--- | :--- | :--- |
 | Single Board Computer (SBC) | Signal Processing | Embedded Controller | Output | USB | Receives data from the Doppler Radar and processes all the data to be transmitted to the control center.  |
 | Power | Power & Circuitry Design | DC Power | Input | Battery Bus | Drone battery provides power to the doppler radar. |
 
@@ -656,6 +668,7 @@ The Jetson Nano generates a voice prompt or message and transmits it to the sens
 **Interfacing:**
 
 | Interface | Connected Subsystems | Type | Direction | Protocol/Standard | Description |
+| :--- | :--- | :--- | :--- | :--- | :--- |
 | Microphone | Signal Processing | Analog | Input | I2S/USB | Captures real-time vocal responses from victim during cognitive assessment and sends to SBC. |
 | Speaker | Signal Processing | Analog | Output | I2S/USB | Receives trigger signals from the SBC to broadcast vocal commands to assess victim's cognitive ability. |
 | Single Board Computer | Signal Processing | Serial | Bidirectional | USB | Processes, receives, and transmits acoustic data. |
@@ -733,6 +746,8 @@ The NSPE and IEEE Codes of Ethics require engineers to hold public safety, healt
 
 ### Summary of Design Impacts
 | **Consideration** | **Design Response** | **Related Requirement** | 
+| Organization | Requirement | Influence on the Design |
+| :--- | :--- | :--- |
 | Public safety | Return-to-home fail-safe, protected enclosure, defined operating limits, electrical protection | S5, S6, C1–C4 |
 | Privacy and public health | Onboard processing, no stored data, encrypted link, access control, separated identifiers | S7, C5, C8 |
 | Human–drone trust | Human in the loop, confidence levels on readings | C7, S2, S3 |
@@ -770,7 +785,7 @@ The Yahboom IMX219 was chosen because of its broad scene coverage and lower proc
 | :--- | :--- | :--- | :--- |
 | 5V External Power Supply | $37.99 | 1 | $37.99 |
 | AA Batteries (20 pack) | $9.99 | 1 | $9.99 |
-| **Subtotal** | | | **$47.98** |
+| **Total Cost** | | | **$47.98** |
 
 This 5V external power supply was chosen because it is compatible with the Jetson nano and provides continuous voltage. This eliminates the need for a voltage regulator because our radar, camera, and microphone are no longer connected to the drone's internal battery.   
 
@@ -783,7 +798,7 @@ This 5V external power supply was chosen because it is compatible with the Jetso
 | Yahboom IMX219 Camera | $26.99 | 2 | $53.98 |
 | 5V External Power Supply | $37.99 | 1 | $37.99 |
 | AA Batteries (20 pack) | $9.99 | 1 | $9.99 |
-| Total Cost | | | $325.97 |
+| **Total Cost** | | | $325.97 |
 
 ---
 
@@ -912,7 +927,7 @@ If new subsystems develop or a team members' expertise is better aligned with an
 * **Control Systems:** Allison Wolden
 * **Radar Systems:** Weston LaRue
 * **Human Locating Systems:** Sidney Delgado
-* **Communication System**
+* **Communication Systems**
   * **Data Transfer:** Allison Wolden
   * **Human Communication:** Sidney Delgado
 
