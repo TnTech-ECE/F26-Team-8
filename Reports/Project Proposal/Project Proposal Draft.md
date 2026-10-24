@@ -378,6 +378,7 @@ As engineers, the team’s first duty is to hold public safety, health, and welf
 [2] Infineon Technologies, BGT60UTR11AIP 60 GHz Radar Sensor, product page. https://www.infineon.com/cms/en/product/sensor/radar-sensors/radar-sensors-for-iot/60ghz-radar/bgt60utr11aip/  
 
 [3] Infineon Technologies, BGT60UTR11AIP Datasheet. https://www.infineon.com/assets/row/public/documents/24/49/infineon-bgt60utr11aip-datasheet-en.pdf  
+
 [4] Infineon Developer Community, FAQs for XENSIV BGT60UTR11AIP Radar Sensor, 2026. https://community.infineon.com/t5/Knowledge-Base-Articles/FAQs-for-XENSIV-BGT60UTR11AIP-radar-sensor/ta-p/1017137 
 
 [5] Seeed Studio, reComputer J1020 v2 (Jetson Nano) product listing.  
@@ -428,7 +429,7 @@ As engineers, the team’s first duty is to hold public safety, health, and welf
 
 [28] Association for the Advancement of Medical Instrumentation, ANSI/AAMI EC13: Cardiac Monitors, Heart Rate Meters, and Alarms, Arlington, VA. 
 
- [29] International Electrotechnical Commission, IEC 60529: Degrees of Protection Provided by Enclosures (IP Code), Geneva, Switzerland. 
+[29] International Electrotechnical Commission, IEC 60529: Degrees of Protection Provided by Enclosures (IP Code), Geneva, Switzerland. 
 
 [30] Wi-Fi Alliance, WPA3 Specification, Austin, TX. 
 
