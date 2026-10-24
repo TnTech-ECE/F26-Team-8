@@ -24,7 +24,7 @@ Sidney Delgado
     * [C. Human Locating Systems](#c-human-locating-systems)
     * [D. Communication Systems](#d-communication-systems)
         * [1. Data Transfer](#1-data-transfer)
-        * [2. Human Communication](#2-human-communication---sidney)
+        * [2. Human Communication](#2-human-communication)
 * [V. High-Level Solution](#v-high-level-solution)
     * [A. Hardware Block Diagram](#a-hardware-block-diagram)
     * [B. Operational Flow Chart](#b-operational-flow-chart)
@@ -33,9 +33,9 @@ Sidney Delgado
     * [B. Power & Circuitry Design Subsystem](#b-power--circuitry-design-subsystem)
     * [C. Signal Processing Subsystem](#c-signal-processing-subsystem)
     * [D. Interfacing Subsystem](#d-interfacing-subsystem)
-    * [E. Human Detection Subsystem](#e-human-detection-subsystem---sidney)
+    * [E. Human Detection Subsystem](#e-human-detection-subsystem)
     * [F. Vital Sensing Subsystem](#f-vital-sensing-subsystem)
-    * [G. Human Communication Subsystem](#g-human-communication-subsystem---sidney)
+    * [G. Human Communication Subsystem](#g-human-communication-subsystem)
 * [VII. Ethical, Professional, and Standards Considerations](#vii-ethical-professional-and-standards-considerations)
 * [VIII. Resources](#viii-resources)
     * [A. Budget](#a-budget)
@@ -47,19 +47,19 @@ Sidney Delgado
 ---
 
 ## I. Introduction
-Emergency response efforts in hazardous environments often face a critical bottleneck in the rapid response of identifying and triaging casualties without risking additional human life. While aviation drones excel at visual reconnaissance, terrain mapping, and search and rescue surveillance, standard platforms are unable to evaluate physical trauma or autonomously assess casualties and victim priority. Drones with such capabilities would be vital tools in saving the valuable time and resources of responders, saving more lives in the process. While some drones do possess some of the capabilities required to autonomously categorize victims, they lack the ability to triage victims in the same conditions and at the same speed as a human. This obstacle has become a concern of the Defense Advanced Research Projects Agency (DARPA), who has formulated a challenge to address this problem.
+Emergency response efforts in hazardous environments often face a critical bottleneck in the rapid response of identifying and triaging casualties without risking additional human life. While aviation drones excel at visual reconnaissance, terrain mapping, and search and rescue surveillance, standard platforms are unable to evaluate physical trauma or autonomously assess casualties and victim priority. Drones with such capabilities would be vital tools in saving the valuable time and resources of responders, saving more lives in the process. While some drones do possess some of the capabilities required to autonomously categorize victims, they lack the ability to triage victims in the same conditions and at the same speed as a human. This obstacle has become a concern of the Defense Advanced Research Projects Agency (DARPA), who has formulated a challenge to address this problem. 
 
-In search and rescue operations, this drone system would enable rapid initial canvassing of disaster, relaying casualty locations and health metrics directly to ground and air medical teams to optimize aid and rescue. The following conceptual design will outline the background information, design constraints, system specifications, and technical framework of this project to meet this objective. Additionally, it will provide a comparative analysis of contemporary technologies and previous solutions to highlight how the proposed design most effectively addresses the problem.
+In search and rescue operations, this drone system would enable rapid initial canvassing of disaster, relaying casualty locations and health metrics directly to ground and air medical teams to optimize aid and rescue. The following conceptual design will outline the background information, design constraints, system specifications, and technical framework of this project to meet this objective. Additionally, it will provide a comparative analysis of contemporary technologies and previous solutions to highlight how the proposed design most effectively addresses the problem. 
 
 ---
 
 ## II. Background
 
 ### A. Defining Triage 
-Triage is the process of rapidly assessing and prioritizing victims in emergency situations based on their physical condition and severity of injuries. The goal of triage is to direct immediate care to those who need it most, optimizing the amount of time and medical resources spent to maximize the number of lives saved.
+Triage is the process of rapidly assessing and prioritizing victims in emergency situations based on their physical condition and severity of injuries. The goal of triage is to direct immediate care to those who need it most, optimizing the amount of time and medical resources spent to maximize the number of lives saved. 
 
 ### B. Benefits of a Triage Drone
-Traditional ground-based triage approaches rely on human responders physically reaching each victim on foot. This process is inherently constrained by dangerous environments, available methods of travel, and finite personnel. Developing a semi-autonomous triage drone addresses several critical operational challenges:
+Traditional ground-based triage approaches rely on human responders physically reaching each victim on foot. This process is inherently constrained by dangerous environments, available methods of travel, and finite personnel. Developing a semi-autonomous triage drone addresses several critical operational challenges: 
 
 * **Eliminating the "Golden Hour" Delay:** In severe trauma cases, victim survival heavily depends on the initial treatment window, often referred to as the "golden hour." Aerial platforms are perfect for this application since they can cross impassable terrain or infrastructure in shorter paths and in less time to begin physiological evaluation long before ground crews.
 * **Data-Driven Decision Making:** High-stress disaster scenarios may cause human assessment to be subject to panic, environmental distraction, or cognitive overload. Drones equipped with automated sensing would deliver objective, standardized vital sign measurements directly to control stations, ensuring data and decision making is less dependent on human error.
@@ -184,111 +184,170 @@ Dr. Blair's desired outcome is a drone that rapidly canvasses a disaster area an
 In this section, various potential solutions are hypothesized, design considerations are discussed, and factors influencing the selection of a solution are outlined. The chosen solution is then identified with justifications for its selection. 
 
 ### A. Control Systems
-While designing the control system, the team decided between using the default transmitter, a mobile device, and a PC system. The control system will be used to communicate between the drone and command center as well as transmitting data gathered from our sensors. 
+While designing the control system, the team decided between using the default transmitter, a mobile device, and PC system. The control system will be used to communicate between the drone and command center as well as transmitting data gathered from our sensors.  
 
 #### Default Transmitter – Radiomaster TX16S
+
 ![Radiomaster TX16S](ConceptualDesignPictures/ControlSystems1.png)
-This 16-channel transmitter is included with the Aurelia X4 standard drone; therefore, it is a low-cost solution. This transmitter can be programmed from a PC using OpenTX Companion and is best suited for control over flight. There are 2 UART ports included that can be used for GPS, Bluetooth, and other serial devices, allowing live GPS updates from the drone as well as supporting Bluetooth connections for the Jetson Nano. 
-* **Pros:** Easy to use, cost-friendly, best option for in-flight control.
-* **Cons:** Does not support camera and microphone feeds.
+
+This 16-channel transmitter is included with the Aurelia X4 standard drone therefore it is a low cost solution. This transmitter can be programmed from a PC using OpenTX Companion and is best suited for control over flight. There are 2 UART ports included that can be used for GPS, Bluetooth, and other serial devices, allowing the team to have live GPS updates from the drone as well as support Bluetooth connection for the Single Board Computer.  
+* **Pros:** Easy to use, cost-friendly; best option for in-flight control
+* **Cons:** Does not support camera and microphone feed. 
 
 #### Mobile Device
-Handheld device used to program flight paths, set waypoints, and view live telemetry. Is not suitable for flying the drone (this has to be done through the transmitter).  
+
+![Mobile Device](ConceptualDesignPictures/ControlSystems2.png)
+
+Handheld device used to program flight paths, set waypoints, and view live telemetry. Is not suitable for flying the drone; this has to be done through the transmitter.   
 * **Pros:** Compact, easily transportable.
-* **Cons:** Program to change drone settings is not intended for mobile devices; analyzing sensor data is not ideal through a mobile device.
+* **Cons:** Program to change drone settings is not indented for mobile devices; analyzing sensor data is not ideal through a mobile device
 
 #### PC System
-Personal laptop to program flight controls, view live telemetry, and set waypoints. All collected data can be wirelessly transmitted to the laptop and processed. 
-* **Pros:** Easy to program, software designed for PC interface, cost-friendly.
-* **Cons:** Not compact, implementation may be more complicated.
+
+![PC System](ConceptualDesignPictures/ControlSystems3.png)
+
+Personal laptop to program flight controls, view live telemetry, and set waypoints. All collected data can be wirelessly transmitted to the laptop and processed.  
+* **Pros:** Easy to program, program made to be used on PC interface, Cost-friendly 
+* **Cons:** Not compact, Implementation may be more complicated 
 
 #### Control System Solution
-The ideal solution is a combination of the PC and transmitter system. The PC will be used to determine flight path, radio settings, and analyze sensor data. The transmitter will only be used for flying the drone and will not receive or transmit any data from aftermarket components.
+The ideal solution is a combination of the PC and transmitter system. The PC will be used to determine flight path, radio settings, and analyzing sensor data. The transmitter will only be used for flying the drone and will not be receiving or transmitting any data from aftermarket components.  
 
 ### B. Radar Systems 
-The Radar systems usable for heart rate monitoring are very limited. The options for types of radar signals are pulse, pulse doppler, Continuous Wave (CW) doppler, and frequency-modulated continuous wave (FMCW). For measuring heart rate and respiratory signals, CW waveforms are the best option for reliable data. 
+The Radar systems that are usable for heart rate monitoring are very limited. The options for types of radar signals are pulse, pulse doppler, Continuous Wave (CW) doppler, and frequency modulated continuous wave (FMCW). For measuring heart rate and respiratory signals, CW waveforms are the best option for the most reliable data.  
 
-#### Infineon Demo BGT60UTR11AIP radar sensor
-The Infineon Demo BGT60UTR11AIP radar sensor is a $60\text{ GHz}$ Frequency Modulated Continuous Wave (FMCW) radar; however, it also possesses the capability to operate in Continuous Wave (CW) mode. The sensor is attached to an Infineon Radar Baseboard MCU7 Plus which is roughly 3 inches by 1 inch and weighs less than a gram. It can be operated via board pins or micro-USB. Infineon provides an extensive SDK and GUI.
-* **Pros:** Uses $60\text{ GHz}$ Continuous Waves for reliable readings; capable of both FMCW and CW doppler waveforms.
+#### Infineon Demo BGT60UTR11AIP Radar Sensor
+
+![Infineon Demo BGT60UTR11AIP](ConceptualDesignPictures/RadarSystems1.png)
+
+The Infineon Demo BGT60UTR11AIP radar sensor is a 60GHz Frequency Modulated Continuous Wave (FMCW) radar; however, it also possesses the capability to operate in a Continuous Wave (CW) mode. The sensor is attached to an Infineon Radar Baseboard MCU7 Plus which is roughly 3 inches by 1 inch and weighs less than a gram. It can be operated via pins on the board or through a micro-USB connection. Infineon provides an extensive SDK for using this technology as well as a ready-to-go GUI. 
+* **Pros:** Uses 60GHz Continuous Waves for reliable readings and has capabilities to use both FMCW and CW doppler waveforms.
 * **Cons:** Limited on range and resolution.
 
-#### Texas Instruments AWR1843 radar sensor
-The Texas Instruments AWR1843 radar is an integrated single-chip FMCW radar sensor capable of operation in the $76\text{ to }81\text{ GHz}$ band. It is built on TI’s low-power 45nm RFCMOS process, enabling a monolithic implementation of a 3TX, 4RX system with built-in PLL and ADC converters. Includes a BIST processor subsystem for radio configuration, control, and calibration.
-* **Pros:** Higher frequency range of FMCW waveforms that penetrate skin less and relay more information; built-in processing creates a cleaner signal.
-* **Cons:** Costliest option; requires more power than other options.
+#### Texas Instruments AWR1843 Radar Sensor
+![Texas Instruments AWR1843](ConceptualDesignPictures/RadarSystems2.png)
+
+The Texas Instruments AWR1843 radar is an integrated single-chip FMCW radar sensor capable of operation in the 76 to 81GHz band. It is built on TI’s low-power 45nm RFCMOS process, which enables a monolithic implementation of a 3TX, 4RX system with built-in PLL and ADC converters. The device includes a BIST processor subsystem, which is responsible for radio configuration, control, and calibration. 
+* **Pros:**  Has a higher frequency range of FMCW waveforms that will penetrate skin less and relay more information. Has built in processing into the board that creates a cleaner signal.
+* **Cons:** The radar is the costliest option and requires more power than the other options. 
 
 #### Radar System Solution 
-The best option is the Infineon Demo BGT60UTR11AIP radar sensor because of its lower power consumption, smaller form factor, and affordability. The $60\text{ GHz}$ range of the radar makes it fully viable for its purpose.
+The best of the options is the Infineon Demo BGT60UTR11AIP radar sensor because of its lesser power consumptions, smaller form factor, and more affordable price. The 60GHz range of the radar makes it more than viable for its purpose.  
 
 ### C. Human Locating Systems
-The location system helps visually locate the victim and establish contact. Candidates include the Yahboom IMX219 camera, Waveshare IMX219-83 Stereo Camera, and Arducam IMX477 HQ Camera.
+The location system would help visually locate the victim and establish contact. The Yahboom IMX219 camera, the Waveshare IMX219-83 Stereo Camera, and the Arducam IMX477 HQ Camera are all possible candidates for the location system. 
 
 #### Yahboom IMX219 Camera (Default)
-The NVIDIA Jetson IMX219 camera measures $24\text{ mm} \times 25\text{ mm}$. It features a $160^\circ$ field of view, 8MP resolution, Sony IMX219 chip, and CSI interface for real-time image recognition.
-* **Pros:** Compatible with Jetson Nano, $160^\circ$ field of view, 1080p resolution with 8MP, supports real-time human detection, connects directly via ribbon cable.
-* **Cons:** Processing delays possible due to limited resources; wide-angle distortion can reduce detection.
+
+![Yahboom IMX219](ConceptualDesignPictures/HumanLocating1.png)
+
+The NVIDIA Jetson IMX219 camera measures 24mm by 25mm. It has a 160° field of view, 800w resolution, a Sony IMX219 chip, and a CSI interface, and is used for real-time image recognition. 
+* **Pros:** Compatible with Jetson Nano. Features a 160° field of view. 1080P resolution with 800W pixels. Supports real-time human detection. Connects directly to the Nano via a ribbon cable.
+* **Cons:** Image processing may be delayed due to limited computing resources, and wide-angle images can be distorted, reducing detection.  
 
 #### Waveshare IMX219-83 Stereo Camera
-Uses a dual-camera system to estimate depth and width. Each camera has a $3280 \times 2464$ resolution (8MP). Features $<1\%$ lens distortion, a $73^\circ$ field of view, and a $60\text{ mm}$ stereo baseline. Compatible with Jetson Nano B01.
-* **Pros:** Compatible with Jetson Nano, dual cameras estimate distance accurately, built-in motion sensing, $<1\%$ distortion, dual Sony IMX219 chips.
-* **Cons:** Environmental conditions affect depth accuracy; requires more image processing; smaller FOV ($73^\circ$).
+
+![Waveshare IMX219-83](ConceptualDesignPictures/HumanLocating2.png)
+
+The Waveshare IMX219-83 Stereo Camera uses a dual-camera system to estimate depth and width, helping locate victims. Each camera has a 3280 × 2464 resolution and an 8-megapixel rating. The system features less than 1% lens distortion, a 73-degree field of view, and a 60 mm stereo baseline. It is compatible with the Jetson Nano B01. 
+* **Pros:** Compatible with Jetson Nano. Dual cameras can locate and estimate distance more accurately. Has built-in motion sensing. Less than 1% distortion. Has two Sony IMX219 chips.
+* **Cons:** Environmental conditions could affect depth accuracy. More image processing is required. Has a smaller field of view of about 73 degrees.
 
 #### Arducam IMX477 HQ Camera
-Compatible with Jetson Nano, supporting interchangeable lenses with a $65^\circ$ FOV and 12.3MP resolution. Improves image detail for identifying individuals.
-* **Pros:** Compatible with Jetson Nano, high resolution, improves visual tracking/human detection, interchangeable lenses.
-* **Cons:** Does not measure distance; narrow horizontal FOV ($65^\circ$ standard); additional lenses needed for wide FOV; high resolution increases processing demand.
+
+![Arducam IMX477 HQ](ConceptualDesignPictures/HumanLocating3.png)
+
+Waveshare IMX219-83 Stereo Camera uses a dual-camera system that can estimate depth and width, which helps locate The Arducam IMX477 HQ Camera is compatible with the Jetson Nano. The camera supports interchangeable lenses and has a field of view of 65 degrees. It has 12.3 megapixels. This camera improves image detail for identifying people in the captured footage. 
+* **Pros:** Compatible with Jetson Nano. Higher image resolution. Improves visual tracking and human detection. Interchangeable lenses.
+* **Cons:** Does not measure distance. The standard lens has a narrower horizontal field of view, maxing out at 65 degrees. Additional lenses are needed for a wider field of view. The high resolution might increase image-processing demand.  
 
 #### Human Locating System Solution
-The chosen sensor for human locating is the Yahboom IMX219 $160^\circ$ camera. It lacks depth perception but offers broader scene coverage and lower processing demands, minimizing lag.
+The sensor chosen for human locating was the Yahboom IMX219 160-degree camera. This device lacks depth perception but offers broader scene coverage and requires less processing power than the other options. Higher processing power increases the likelihood of lag. 
 
 ### D. Communication Systems
-Two communication systems are implemented: data transfer between the Jetson Nano and PC laptop, and human communication (speaker/microphone with victim).
+In the team's design, they implemented two communication systems. One of the communication systems is dedicated to the data transfer between the Single Board Computer and a personal laptop. The second system is dedicated to human communication. To achieve this, the team will implement a speaker and microphone to communicate with the victim.  
 
 #### 1. Data Transfer 
-To transmit data from the Jetson Nano to a personal laptop, options across Wi-Fi/Bluetooth, cellular, ethernet, and LoRa were evaluated:
+To successfully transmit data from the Jetson Nano to a personal laptop, Allison found solutions in 3 categories. These include Wi-fi/Bluetooth, cellular, ethernet, and long-distance radio communication (LoRa).  
 
-* **EDIMAX N150:**
-    * Supports Wi-Fi/Bluetooth on Jetson Nano at speeds up to 150Mbps. Range: 10–30 meters. Transmits radar, camera, and microphone data. Built-in network security.
-    * *Pros:* Jetson Nano compatible, no bulky attachments, lightweight.
-    * *Cons:* Short range.
-* **Intel AC8265 Wireless NIC:**
-    * Supports Wi-Fi/Bluetooth on Jetson Nano at 300Mbps (2.3GHz). Range: 30–50 meters. Transmits radar, video, and audio with integrated network security.
-    * *Pros:* Jetson Nano compatible, lightweight.
-    * *Cons:* Short range.
-* **GNSS Expansion Board Module:**
-    * Supports 4G cellular communication up to 5000 meters. Transmits video, audio, and radar data over long distances.
-    * *Pros:* Long range.
-    * *Cons:* Difficult to integrate, heavier payload impact.
-* **LoRa (Long Range Radio):**
-    * Supports long-range radio communication for image clusters up to 300 meters. Lowest cost long-range option. Video is greyscale/image-based.
-    * *Pros:* Long range, low cost, lightweight.
-    * *Cons:* Lower quality video, susceptible to external noise interference.
+**EDIMAX N150**
+
+![EDIMAX N150](ConceptualDesignPictures/DataTransfer1.png)
+
+Supports both Wi-Fi and Bluetooth connections that are compatible with the Jetson Nano. It operates with speeds up to 150Mbps. It comes with built-in network security and is compatible with both Windows and Linux. The range for the EDIMAX N150 is 10-30 meters. It is capable of transmitting radar data, camera feed, and microphone data.  
+* *Pros:* Jetson Nano compatible, Does not require bulky aftermarket attachments, lightweight
+* *Cons:* Short range.
+
+**Intel AC8265 Wireless NIC**
+
+![Intel AC8265](ConceptualDesignPictures/DataTransfer2.png)
+
+Supports both Wi-fi and Bluetooth connections that are compatible with the Jetson nano. It operates at speeds of 300Mbps at 2.3GHz. The range for the Intel AC8265 Wireless NIC is typically 30-50 meters. It can transmit radar data, camera feed, and microphone data. It also has integrated network security.  
+* *Pros:* Jetson Nano compatible, lightweight.
+* *Cons:* Short range.
+
+**GNSS Expansion Board Module**
+
+![GNSS](ConceptualDesignPictures/DataTransfer3.png)
+
+Supports 4G cellular communication and is compatible with the Jetson nano. The range is 5000 meters. Is capable of transmitting video, microphone, and radar data over very long distances. This option is significantly more complicated to integrate with our current system. The component itself will reduce our available payload compared to other options.  
+* *Pros:* Long range.
+* *Cons:* Difficult to integrate and set up, weight of component
+
+**LoRa (Long Range Radio)**
+
+![LoRa](ConceptualDesignPictures/DataTransfer4.png)
+
+Supports long range radio communication that is suitable for sending images in clusters. This will allow the camera feed to be transmitted over long distances. The range is 300 meters. This gives the longest range with the lowest cost. It can transmit microphone, radar, and video. The video feed would be grey scale and sent in small clusters. 
+* *Pros:* Long range, low cost, lightweight.
+* *Cons:* Lower quality video, susceptible to external noise interference.
 
 ##### Data Transfer System Solution
-The primary solution is the Intel AC8265 Wireless NIC Wi-Fi adapter for high-quality real-time feeds. In rural environments, LoRa will be equipped as a backup to transmit low-quality image clusters and telemetry.
+The ideal solution for data transfer from Jetson nano to a personal laptop is the Intel AC8265 Wireless NIC Wi-fi adapter. This is because it can transmit high-quality video feed along with all other sensor data. In the case of an extremely rural environment, LoRa will also be equipped to transmit low-quality video in the form of image clusters and all other sensor data.  
 
 #### 2. Human Communication
-Five hardware options were evaluated (3 microphones, 2 speakers):
+Communication with the victim is a central component of this project. To identify an appropriate solution, five sensors were evaluated: three for capturing audio from the victim, the ReSpeaker 4-mic Array, the ReSpeaker XMOS XVF3800, and the RØDE VideoMic Go II, and two for communicating with the victim: the 2831/3128 mini full-range cavity speaker and the Yahboom USB sound card and speaker for Raspberry Pi/Jetson/RDK series boards. 
 
-* **ReSpeaker 4-Mic Array (UAC 1.0 - Default):** Low-power USB microphone array with embedded audio processing, voice capture, sound direction detection, and noise suppression.
-    * *Pros:* 4 mics for directional capture, USB connection, noise suppression, low power.
-    * *Cons:* Filtering may not fully eliminate drone rotor noise; requires external speaker for 2-way comms.
-* **ReSpeaker USB 4-Mic Array XVF3800:** Updated array featuring $360^\circ$ voice pickup up to $5\text{ m}$, echo cancellation, and noise suppression.
-    * *Pros:* $360^\circ$ sound pickup, source localization, echo cancellation.
-    * *Cons:* Expensive, does not completely eliminate drone noise, potential Jetson driver/feature limitations.
-* **RØDE VideoMic Go II:** Lightweight directional microphone with USB-C/3.5mm outputs.
-    * *Pros:* Highly directional pickup pattern, lightweight, includes windshield.
-    * *Cons:* Expensive, proximity to drone still picks up rotor noise, must be aimed directly at victim.
-* **2831/3128 Mini Full-Range Cavity Speaker:** Compact output speaker for tight spaces.
-    * *Pros:* Compact, lightweight, low power, ideal for voice instructions.
-    * *Cons:* May require an external amplifier to overcome drone noise.
-* **Yahboom USB Sound Card & Speaker:** Designed for Raspberry Pi/Jetson series boards.
-    * *Pros:* Native Jetson compatibility, budget-friendly, all-in-one setup.
-    * *Cons:* Less field-tested, dual-system design adds weight.
+**ReSpeaker 4-Mic Array (UAC 1.0 - Default)** 
+
+![UAC 1.0](ConceptualDesignPictures/HumanCommunication1.png)
+
+The Seeed Studio ReSpeaker 4-Mic Array is a low-power USB microphone array. It features embedded audio processing, voice capture, sound direction detection, and noise suppression. These capabilities are well suited to communicating with potential victims.   
+* *Pros:* Has 4 mics to support audio capture and sound direction. Uses USB, so it is compatible with most computing platforms. Has features to suppress unwanted noise and boost voices. Low power consumption.
+* *Cons:* Internal filtering might not be sufficient to reduce drone noise. Speech recognition could be used but would require additional software. A speaker is needed to enable two-way communication.
+**ReSpeaker USB 4-Mic Array XVF3800**
+
+![XVF3800](ConceptualDesignPictures/HumanCommunication2.png)
+
+The ReSpeaker XMOS XVF3800 is an updated version of the ReSpeaker 4-Mic Array. It features onboard audio processing, 360-degree voice pickup, echo cancellation, voice activity detection, and noise suppression. 
+* *Pros:* It offers 360-degree sound pickup and sound-source localization to help identify a person’s location. It can pick up voices from up to 5 m away and connect via USB or I2S. It also features echo cancellation and noise suppression.  
+* *Cons:* It is expensive, does not completely eliminate drone noise, and may not support all features on the Jetson Nano; additional hardware may be required.
+
+**RØDE VideoMic Go II:**
+  
+![RØDE VideoMic](ConceptualDesignPictures/HumanCommunication3.png)
+  
+The VideoMic Go II is a compact, lightweight directional microphone with USB-C digital and 3.5mm analog outputs. It also offers advanced features, including powerful digital processing and pickup pattern options. 
+* *Pros:* The microphone primarily picks up sound from the direction it’s pointed. It is lightweight, includes a windshield, and connects via USB.
+* *Cons:* It is expensive. Since it is close to the drone, it may still pick up the drone’s noise. It would also require additional software to run on a Jetson Nano and must be aimed at the victim to capture their voice clearly.
+**2831/3128 Mini Full-Range Cavity Speaker**
+  
+![2831/3128](ConceptualDesignPictures/HumanCommunication4.png)
+
+The 2831/3128 mini full-cavity speaker is a compact output speaker designed for tight spaces. 
+* *Pros:* It is compact and lightweight, consumes little power, and its full-range design makes it ideal for voice instructions.
+* *Cons:* It may not be loud enough to overcome the drone noise and may require an amplifier. Clarity isn’t guaranteed under unfavorable conditions.
+
+**Yahboom USB Sound Card & Speaker**
+
+![Yahboom USB](ConceptualDesignPictures/HumanCommunication5.png)
+
+The Yaboom USB sound card and speaker kit is an excellent choice for audio output. It works with the Jetson Nano and Yaboom Camera without additional components and is reasonably priced. 
+* *Pros:* Designed for the Jetson Nano, it’s compact, budget-friendly, and requires no additional software or components.
+* *Cons:* Few people have tested the product, so its performance is still uncertain. Its dual-system design also contributes to its greater weight.
 
 ##### Human Communication System Solution
-The ReSpeaker 4-Mic Array was selected for its minimal processing impact on the Jetson Nano. Custom notch filtering will be implemented in software to handle rotor noise. The Mini Full-Range Cavity Speaker was chosen as the output unit due to higher reliability and lower weight; dual speakers can be deployed if amplification is required.
+The ReSpeaker 4-Mic Array was selected as the microphone because it requires considerably less processing power than the updated version, making it better suited to the Jetson Nano. Its features are also sufficient to meet the intended requirements. Although the microphone may not effectively filter out drone noise, it can be programmed to do so. The Yahboom4m USB Speaker appears to be the most compatible option. The Mini Full-Range Speaker has undergone more testing than the Yahboom USB Speaker, making it the more reliable choice. If necessary, two full-range speakers could be used to amplify the speaker’s voice. 
 
 ---
 
@@ -332,10 +391,18 @@ Major hardware assets (Aurelia X4, Jetson Nano, ReSpeaker array, LiDAR, GPS) are
 ---
 
 ### A. Hardware Block Diagram
-*(Hardware block diagrams created in Canva center on the drone and computer subsystems, outlining primary communications, power paths, and digital conversion loops.)*
+![Main](ConceptualDesignPictures/HardwareBlock1.png)
+
+![Computer](ConceptualDesignPictures/HardwareBlock2.png)
+
+![Drone](ConceptualDesignPictures/HardwareBlock3.png)
+
+The above hardware block diagrams, created in Canva, center on the drone and the computer. The diagrams visually break down the primary subsystems, focusing on communication paths between the components. Any analog signal is converted to a digital signal, and the power supply for each main system powers that entire system. The controller is omitted from the diagram due to the lack of planned modifications.
 
 ### B. Operational Flow Chart
-*(High-level flowchart depicting pre-flight initialization, GPS navigation, target acquisition, vital reading execution, data transmission, and return-to-home protocols.)*
+![Operational Flow](ConceptualDesignPictures/OperationalFlow1.png)
+
+![Power Monitoring](ConceptualDesignPictures/OperationalFlow2.png)
 
 ---
 
