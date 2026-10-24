@@ -186,7 +186,7 @@ In [16], a lightweight YOLO model deployed on an embedded Jetson module demonstr
 * Optimize model deployment on the Jetson Nano to maintain operation under thermal and power constraints [6]. 
 * Train and fine-tune YOLO using SAR datasets to improve small target recognition in complex environments.
 * Establish hierarchical trigger systems to flag candidate coordinates using visual detection, radar, and acoustic verification to improve detection confidence [16].
-* Additional model comparisons and sensor fusion strategies will be explored in future iterations of the system design.
+* Additional model comparisons and sensor fusion strategies will be deferred to future iterations of the system design.
 
 ### D. UAV Path Planning
 #### General Overview
@@ -214,7 +214,7 @@ Tang et al. [17] evaluated contemporary navigation and detection integration str
 * Battery consumption must be directly factored into path selection algorithms [17].
 * Utilize active radar and acoustic sensors to maintain navigation integrity in low-visibility environments [17].
 * Incorporate identification and pathfinding techniques that consider environmental lighting and visual angles.
-* Additional path-planning models will be explored in future iterations of the system design.
+* Additional path-planning models will be deferred to future iterations of the system design.
 
 ### E. Power & Payload
 #### General Overview
@@ -239,6 +239,19 @@ Bluetooth will not work because of the short range and ethernet would only be ap
 * The communication range is important because of the rugged environments the device will be placed in.  
 * Power consumption plays a big role in which the device is most effective while still meeting the requirements set by Dr. Blair.  
 * The video feed needs to be clear enough to see facial expressions.  
+
+#### Example: Hybrid Framework for Electric UAV Emergency Rescue
+The company Everdrone operates drones used to aid first responders in emergencies in Sweden. They are more agile and faster than EMS services when responding to emergencies such as cardiac arrest. The use of cellular wireless communication is implemented into medical drones to allow for a large range of operation.  
+
+* **Benefits:**
+  * Offers lifesaving care to many people. 
+  * The range for drones is very wide and typically covers thousands of kilometers.  
+* **Drawbacks:**
+  * High cost because it is a new technology. 
+  * The human to machine relationship needs to be considered when implementing this into a community. People may be less likely to recognize it as "help" when compared to first responders.  
+
+#### Key Takeaways
+Cellular communication is the ideal form of wireless communication because of the long range. When the team is designing our solution, it is important for us to take into consideration the human-machine relationship.  
 
 ---
 
