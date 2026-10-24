@@ -258,7 +258,7 @@ Cellular communication is the ideal form of wireless communication because of th
 ## VII. Timeline & Budget
 
 ### Gantt Chart
-*(Note: Gantt Chart Diagram referenced from Team 8 Project Documentation)*
+![Gantt Chart](GanttChart.png)
 
 ### Bill of Materials (BOM)
 
