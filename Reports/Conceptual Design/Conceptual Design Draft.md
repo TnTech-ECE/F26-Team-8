@@ -187,6 +187,7 @@ In this section, various potential solutions are hypothesized, design considerat
 While designing the control system, the team decided between using the default transmitter, a mobile device, and a PC system. The control system will be used to communicate between the drone and command center as well as transmitting data gathered from our sensors. 
 
 #### Default Transmitter – Radiomaster TX16S
+![Radiomaster TX16S](ConceptualDesignPictures/ControlSystems1.png)
 This 16-channel transmitter is included with the Aurelia X4 standard drone; therefore, it is a low-cost solution. This transmitter can be programmed from a PC using OpenTX Companion and is best suited for control over flight. There are 2 UART ports included that can be used for GPS, Bluetooth, and other serial devices, allowing live GPS updates from the drone as well as supporting Bluetooth connections for the Jetson Nano. 
 * **Pros:** Easy to use, cost-friendly, best option for in-flight control.
 * **Cons:** Does not support camera and microphone feeds.
