@@ -373,45 +373,82 @@ As engineers, the team’s first duty is to hold public safety, health, and welf
 ---
 
 ## X. References
-1. Aurelia Aerospace, *Aurelia X4 User Manual*, Rev. 5, 2026.
-2. Infineon Technologies, "BGT60UTR11AIP 60 GHz Radar Sensor," product page. [https://www.infineon.com/cms/en/product/sensor/radar-sensors/radar-sensors-for-iot/60ghz-radar/bgt60utr11aip/](https://www.infineon.com/cms/en/product/sensor/radar-sensors/radar-sensors-for-iot/60ghz-radar/bgt60utr11aip/)
-3. Infineon Technologies, *BGT60UTR11AIP Datasheet*. [https://www.infineon.com/assets/row/public/documents/24/49/infineon-bgt60utr11aip-datasheet-en.pdf](https://www.infineon.com/assets/row/public/documents/24/49/infineon-bgt60utr11aip-datasheet-en.pdf)
-4. Infineon Developer Community, *FAQs for XENSIV BGT60UTR11AIP Radar Sensor*, 2026. [https://community.infineon.com/t5/Knowledge-Base-Articles/FAQs-for-XENSIV-BGT60UTR11AIP-radar-sensor/ta-p/1017137](https://community.infineon.com/t5/Knowledge-Base-Articles/FAQs-for-XENSIV-BGT60UTR11AIP-radar-sensor/ta-p/1017137)
-5. Seeed Studio, *reComputer J1020 v2 (Jetson Nano)* product listing.
-6. NVIDIA, *Jetson Nano power modes (5 W and 10 W)*.
-7. Texas Instruments, *TPS56637 Synchronous Buck Converter Datasheet*.
-8. Fall 2025 Capstone Team 8, project documents (Power and Safety, Sensors, Communication, Drone Operator, Drone to PC Link, Conceptual Design).
-9. Fall 2024 Capstone Team 5, project repository and parts list.
-10. Customer meeting notes with Dr. Blair, September 16, 2026.
-11. Power and Payload Design, Aurelia X4 Triage Drone, Fall 2026, September 20, 2026.
-12. Federal Aviation Administration. (n.d.). Small Unmanned Aircraft System (sUAS).
-13. “W. Dale Blair | IEEE AESS,” *Ieee-aess.org*, Sept. 10, 2026. [https://ieee-aess.org/contact/w-dale-blair](https://ieee-aess.org/contact/w-dale-blair) (accessed Oct. 02, 2026).
-14. Electronic Code of Federal Regulations, "14 CFR §107.51 Operating limitations for small unmanned aircraft." Available: eCFR.
-15. MatterHackers, “MatterHackers,” *MatterHackers*, 2026. [https://www.matterhackers.com/articles/the-best-3d-printing-filament-for-outdoor-use](https://www.matterhackers.com/articles/the-best-3d-printing-filament-for-outdoor-use) (accessed Oct. 03, 2026).
-16. F. Ciccone and A. Ceruti, “Real-Time Search and Rescue with Drones: A Deep Learning Approach for Small-Object Detection Based on YOLO,” *Drones*, vol. 9, no. 8, pp. 514–514, July 2025, doi: 10.3390/drones9080514 (accessed Oct. 8, 2026).
-17. P. Tang, J. Li, and H. Sun, “A Review of Electric UAV Visual Detection and Navigation Technologies for Emergency Rescue Missions,” *Sustainability*, vol. 16, no. 5, pp. 2105–2105, Mar. 2024, doi: 10.3390/su16052105 (accessed Oct 8, 2026).
-18. IEEE, IEEE Standard for Information Technology—Telecommunications and Information Exchange Between Systems Local and Metropolitan Area Networks—Specific Requirements—Part 11: Wireless LAN Medium Access Control (MAC) and Physical Layer (PHY) Specifications—Amendment 1: Enhancements for High-Efficiency WLAN, in *IEEE Std 802.11ax-2021* (Amendment to IEEE Std 802.11-2020), pp. 1–767, May 19, 2021.
-19. U.S. Department of Defense, *MIL-STD-461G: Requirements for the Control of Electromagnetic Interference Characteristics of Subsystems and Equipment*, Washington, D.C., 2015.
-20. SAE International. (2021). *J3016: Taxonomy and Definitions for Terms Related to Driving Automation Systems for On-Road Motor Vehicles*. SAE International, Warrendale, PA.
-21. C. Bradley and A. Chiou, “Examining the Ethical Considerations of Humanitarian Drones,” 2024. [https://www.updwg.org/wp-content/uploads/2024/09/bradley-chiou-2024-examining-the-ethical-considerations-of-humanitarian-drones.pdf](https://www.updwg.org/wp-content/uploads/2024/09/bradley-chiou-2024-examining-the-ethical-considerations-of-humanitarian-drones.pdf)
-22. R. Hoek Spaans et al., “Ethical considerations related to drone use for environment and health research: A scoping review protocol,” *PLOS ONE*, vol. 19, no. 1, e0287270, Jan. 2024, doi: 10.1371/journal.pone.0287270.
-23. R. Hoek Spaans et al., “Ethical considerations related to drone use for environment and health research: a scoping review,” *Royal Society Open Science*, vol. 13, no. 2, 251530, 2026.
-24. National Society of Professional Engineers, *NSPE Code of Ethics for Engineers*.
-25. IEEE, *IEEE Code of Ethics*, IEEE Policies, Section 7.8.
-26. Health Insurance Portability and Accountability Act of 1996, Pub. L. 104-191, Aug. 21, 1996. 
-27. “List of Equipment and Services Covered by Section 2 of the Secure Networks Act,” Federal Communications Commission, Mar. 09, 2021. https://www.fcc.gov/supplychain/coveredlist (accessed Oct. 21, 2026). 
-28. Association for the Advancement of Medical Instrumentation, ANSI/AAMI EC13: Cardiac Monitors, Heart Rate Meters, and Alarms, Arlington, VA. 
-29. International Electrotechnical Commission, IEC 60529: Degrees of Protection Provided by Enclosures (IP Code), Geneva, Switzerland. 
-30. Wi-Fi Alliance, WPA3 Specification, Austin, TX. 
-31. Electronic Code of Federal Regulations, “14 CFR Part 89: Remote Identification of Unmanned Aircraft.” Available: https://www.ecfr.gov/current/title-14/chapter-I/subchapter-F/part-89 
-32. Electronic Code of Federal Regulations, “14 CFR Part 107, Subpart D: Operations Over Human Beings.” Available: https://www.ecfr.gov/current/title-14/chapter-I/subchapter-F/part-107/subpart-D 
-33. Electronic Code of Federal Regulations, “47 CFR Part 15: Radio Frequency Devices.” Available: https://www.ecfr.gov/current/title-47/chapter-I/subchapter-A/part-15 
-34. International Electrotechnical Commission, IEC 62133-2: Secondary Cells and Batteries Containing Alkaline or Other Non-Acid Electrolytes – Safety Requirements – Part 2: Lithium Systems, Geneva, Switzerland; UL, UL 2054: Household and Commercial Batteries, Northbrook, IL. 
-35. United Nations, Manual of Tests and Criteria, Part III, Section 38.3: Lithium Metal and Lithium Ion Batteries, New York and Geneva. 
-36. UL, ANSI/UL 3030: Standard for Unmanned Aircraft Systems, Northbrook, IL. 
-37. Electronic Code of Federal Regulations, “45 CFR Parts 160 and 164: HIPAA Privacy and Security Rules.” Available: https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C 
-38. Electronic Code of Federal Regulations, “45 CFR Part 46: Protection of Human Subjects.” Available: https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-A/part-46 
-39. Federal Communications Commission, "Amendment of section 15.255 of the commission’s rules for operation of radar systems in the 57-71 GHz band," FCC Report and  Order, FCC 23-35, Jul. 2023. 
+[1] Aurelia Aerospace, Aurelia X4 User Manual, Rev. 5, 2026. 
+
+[2] Infineon Technologies, BGT60UTR11AIP 60 GHz Radar Sensor, product page. https://www.infineon.com/cms/en/product/sensor/radar-sensors/radar-sensors-for-iot/60ghz-radar/bgt60utr11aip/  
+
+[3] Infineon Technologies, BGT60UTR11AIP Datasheet. https://www.infineon.com/assets/row/public/documents/24/49/infineon-bgt60utr11aip-datasheet-en.pdf  
+[4] Infineon Developer Community, FAQs for XENSIV BGT60UTR11AIP Radar Sensor, 2026. https://community.infineon.com/t5/Knowledge-Base-Articles/FAQs-for-XENSIV-BGT60UTR11AIP-radar-sensor/ta-p/1017137 
+
+[5] Seeed Studio, reComputer J1020 v2 (Jetson Nano) product listing.  
+
+[6] NVIDIA, Jetson Nano power modes (5 W and 10 W). 
+
+[7] Texas Instruments, TPS56637 Synchronous Buck Converter Datasheet. 
+
+[8] Fall 2025 Capstone Team 8, project documents (Power and Safety, Sensors, Communication, Drone Operator, Drone to PC Link, Conceptual Design). 
+
+[9] Fall 2024 Capstone Team 5, project repository and parts list. 
+
+[10] Customer meeting notes with Dr. Blair, September 16, 2026. 
+
+[11] Power and Payload Design, Aurelia X4 Triage Drone, Fall 2026, September 20, 2026. 
+
+[12] Federal Aviation Administration. (n.d.). Small Unmanned Aircraft System (sUAS). 
+
+[13] “W. Dale Blair | IEEE AESS,” Ieee-aess.org, Sept. 10, 2026. https://ieee-aess.org/contact/w-dale-blair (accessed Oct. 02, 2026). 
+
+[14] Electronic Code of Federal Regulations, "14 CFR §107.51 Operating limitations for small unmanned aircraft." Available: eCFR. 
+
+[15] MatterHackers, “MatterHackers,” MatterHackers, 2026. https://www.matterhackers.com/articles/the-best-3d-printing-filament-for-outdoor-use (accessed Oct. 03, 2026). 
+
+[16] F. Ciccone and A. Ceruti, “Real-Time Search and Rescue with Drones: A Deep Learning Approach for Small-Object Detection Based on YOLO,” Drones, vol. 9, no. 8, pp. 514–514, July 2025, doi: 10.3390/drones9080514 (accessed Oct. 8, 2026) 
+
+[17] P. Tang, J. Li, and H. Sun, “A Review of Electric UAV Visual Detection and Navigation Technologies for Emergency Rescue Missions,” Sustainability, vol. 16, no. 5, pp. 2105–2105, Mar. 2024, doi: 10.3390/su16052105 (accessed Oct 8, 2026). 
+
+[18] IEEE, IEEE Standard for Information Technology—Telecommunications and Information Exchange Between Systems Local and Metropolitan Area Networks—Specific Requirements—Part 11: Wireless LAN Medium Access Control (MAC) and Physical Layer (PHY) Specifications—Amendment 1: Enhancements for High-Efficiency WLAN, in IEEE Std 802.11ax-2021 (Amendment to IEEE Std 802.11-2020), vol., no., pp. 1–767, May 19, 2021, DOI. 
+
+[19] U.S. Department of Defense, MIL-STD-461G: Requirements for the Control of Electromagnetic Interference Characteristics of Subsystems and Equipment, Washington, D.C., 2015. 
+
+[20] SAE International. (2021). J3016: Taxonomy and Definitions for Terms Related to Driving Automation Systems for On-Road Motor Vehicles. SAE International, Warrendale, PA. 
+
+[21] C. Bradley and A. Chiou, “Examining the Ethical Considerations of Humanitarian Drones,” 2024. https://www.updwg.org/wp-content/uploads/2024/09/bradley-chiou-2024-examining-the-ethical-considerations-of-humanitarian-drones.pdf 
+
+[22] R. Hoek Spaans et al., “Ethical considerations related to drone use for environment and health research: A scoping review protocol,” PLOS ONE, vol. 19, no. 1, e0287270, Jan. 2024, doi: 10.1371/journal.pone.0287270. 
+
+[23] R. Hoek Spaans et al., “Ethical considerations related to drone use for environment and health research: a scoping review,” Royal Society Open Science, vol. 13, no. 2, 251530, 2026. 
+
+[24] National Society of Professional Engineers, NSPE Code of Ethics for Engineers. 
+
+[25] IEEE, IEEE Code of Ethics, IEEE Policies, Section 7.8.\ 
+
+[26] Health Insurance Portability and Accountability Act of 1996, Pub. L. 104-191, Aug. 21, 1996. 
+
+[27] “List of Equipment and Services Covered by Section 2 of the Secure Networks Act,” Federal Communications Commission, Mar. 09, 2021. https://www.fcc.gov/supplychain/coveredlist (accessed Oct. 21, 2026). 
+
+[28] Association for the Advancement of Medical Instrumentation, ANSI/AAMI EC13: Cardiac Monitors, Heart Rate Meters, and Alarms, Arlington, VA. 
+
+ [29] International Electrotechnical Commission, IEC 60529: Degrees of Protection Provided by Enclosures (IP Code), Geneva, Switzerland. 
+
+[30] Wi-Fi Alliance, WPA3 Specification, Austin, TX. 
+
+[31] Electronic Code of Federal Regulations, “14 CFR Part 89: Remote Identification of Unmanned Aircraft.” Available: https://www.ecfr.gov/current/title-14/chapter-I/subchapter-F/part-89 
+
+[32] Electronic Code of Federal Regulations, “14 CFR Part 107, Subpart D: Operations Over Human Beings.” Available: https://www.ecfr.gov/current/title-14/chapter-I/subchapter-F/part-107/subpart-D 
+
+[33] Electronic Code of Federal Regulations, “47 CFR Part 15: Radio Frequency Devices.” Available: https://www.ecfr.gov/current/title-47/chapter-I/subchapter-A/part-15 
+
+[34] International Electrotechnical Commission, IEC 62133-2: Secondary Cells and Batteries Containing Alkaline or Other Non-Acid Electrolytes – Safety Requirements – Part 2: Lithium Systems, Geneva, Switzerland; UL, UL 2054: Household and Commercial Batteries, Northbrook, IL. 
+
+[35] United Nations, Manual of Tests and Criteria, Part III, Section 38.3: Lithium Metal and Lithium Ion Batteries, New York and Geneva. 
+
+[36] UL, ANSI/UL 3030: Standard for Unmanned Aircraft Systems, Northbrook, IL. 
+
+[37] Electronic Code of Federal Regulations, “45 CFR Parts 160 and 164: HIPAA Privacy and Security Rules.” Available: https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C 
+
+[38] Electronic Code of Federal Regulations, “45 CFR Part 46: Protection of Human Subjects.” Available: https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-A/part-46 
+
+[39] Federal Communications Commission, "Amendment of section 15.255 of the commission’s rules for operation of radar systems in the 57-71 GHz band," FCC Report and  Order, FCC 23-35, Jul. 2023. 
 
 ---
 
