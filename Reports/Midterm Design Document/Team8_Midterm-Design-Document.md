@@ -704,7 +704,7 @@ While designing the control system, the team decided between using the default t
 
 #### Default Transmitter – Radiomaster TX16S
 
-![Radiomaster TX16S](ConceptualDesignPictures/ControlSystems1.png)
+![Radiomaster TX16S](/Reports/Conceptual%20Design/ConceptualDesignPictures/ControlSystems1.png)
 
 This 16-channel transmitter is included with the Aurelia X4 standard drone therefore it is a low cost solution. This transmitter can be programmed from a PC using OpenTX Companion and is best suited for control over flight. There are 2 UART ports included that can be used for GPS, Bluetooth, and other serial devices. Allowing the team to have live GPS updates from the drone as well as support Bluetooth connection for the Jetson nano.  
 * **Pros:** Easy to use, cost-friendly; best option for in-flight control
@@ -712,7 +712,7 @@ This 16-channel transmitter is included with the Aurelia X4 standard drone there
 
 #### Mobile Device
 
-![Mobile Device](ConceptualDesignPictures/ControlSystems2.png)
+![Mobile Device](/Reports/Conceptual%20Design/ConceptualDesignPictures/ControlSystems2.png)
 
 Handheld device used to program flight paths, set waypoints, and view live telemetry. Is not suitable for flying the drone; this has to be done through the transmitter.   
 * **Pros:** Compact, easily transportable.
@@ -720,7 +720,7 @@ Handheld device used to program flight paths, set waypoints, and view live telem
 
 #### PC System
 
-![PC System](ConceptualDesignPictures/ControlSystems3.png)
+![PC System](/Reports/Conceptual%20Design/ConceptualDesignPictures/ControlSystems3.png)
 
 Personal laptop to program flight controls, view live telemetry, and set waypoints. All collected data can be wirelessly transmitted to the laptop and processed.  
 * **Pros:** Easy to program, program made to be used on PC interface, cost-friendly 
@@ -736,14 +736,14 @@ The Radar systems that are usable for heart rate monitoring are very limited. Th
 
 #### Infineon Demo BGT60UTR11AIP Radar Sensor
 
-![Infineon Demo BGT60UTR11AIP](ConceptualDesignPictures/RadarSystems1.png)
+![Infineon Demo BGT60UTR11AIP](/Reports/Conceptual%20Design/ConceptualDesignPictures/RadarSystems1.png)
 
 The Infineon Demo BGT60UTR11AIP radar sensor is a 60GHz Frequency Modulated Continuous Wave (FMCW) radar; however, it also possesses the capability to operate in a Continuous Wave (CW) mode. The sensor is attached to an Infineon Radar Baseboard MCU7 Plus which is roughly 3 inches by 1 inch and weighs less than a gram. It can be operated via pins on the board or through a micro-USB connection. Infineon provides an extensive SDK for using this technology as well as a ready-to-go GUI. 
 * **Pros:** Uses 60GHz Continuous Waves for reliable readings and has capabilities to use both FMCW and CW doppler waveforms. 
 * **Cons:** Limited on range and resolution.
 
 #### Texas Instruments AWR1843 Radar Sensor
-![Texas Instruments AWR1843](ConceptualDesignPictures/RadarSystems2.png)
+![Texas Instruments AWR1843](/Reports/Conceptual%20Design/ConceptualDesignPictures/RadarSystems2.png)
 
 The Texas Instruments AWR1843 radar is an integrated single-chip FMCW radar sensor capable of operation in the 76 to 81GHz band. It is built on TI’s low-power 45nm RFCMOS process, which enables a monolithic implementation of a 3TX, 4RX system with built-in PLL and ADC converters. The device includes a BIST processor subsystem, which is responsible for radio configuration, control, and calibration. 
 * **Pros:** Has a higher frequency range of FMCW waveforms that will penetrate skin less and relay more information. Has built in processing into the board that creates a cleaner signal.
@@ -759,7 +759,7 @@ The location system would help visually locate the victim and establish contact.
 
 #### Yahboom IMX219 Camera (Default)
 
-![Yahboom IMX219](ConceptualDesignPictures/HumanLocating1.png)
+![Yahboom IMX219](/Reports/Conceptual%20Design/ConceptualDesignPictures/HumanLocating1.png)
 
 The NVIDIA Jetson IMX219 camera measures 24mm by 25mm. It has a 160° field of view, 800w resolution, a Sony IMX219 chip, and a CSI interface, and is used for real-time image recognition. 
 * **Pros:** Compatible with Jetson Nano. Features a 160° field of view. 1080P resolution with 800W pixels. Supports real-time human detection. Connects directly to the Nano via a ribbon cable.
@@ -767,7 +767,7 @@ The NVIDIA Jetson IMX219 camera measures 24mm by 25mm. It has a 160° field of v
 
 #### Waveshare IMX219-83 Stereo Camera
 
-![Waveshare IMX219-83](ConceptualDesignPictures/HumanLocating2.png)
+![Waveshare IMX219-83](/Reports/Conceptual%20Design/ConceptualDesignPictures/HumanLocating2.png)
 
 The Waveshare IMX219-83 Stereo Camera uses a dual-camera system to estimate depth and width, helping locate victims. Each camera has a 3280 × 2464 resolution and an 8-megapixel rating. The system features less than 1% lens distortion, a 73-degree field of view, and a 60 mm stereo baseline. It is compatible with the Jetson Nano B01. 
 * **Pros:** Compatible with Jetson Nano. Dual cameras can locate and estimate distance more accurately. Has built-in motion sensing. Less than 1% distortion. Has two Sony IMX219 chips.
@@ -775,7 +775,7 @@ The Waveshare IMX219-83 Stereo Camera uses a dual-camera system to estimate dept
 
 #### Arducam IMX477 HQ Camera
 
-![Arducam IMX477 HQ](ConceptualDesignPictures/HumanLocating3.png)
+![Arducam IMX477 HQ](/Reports/Conceptual%20Design/ConceptualDesignPictures/HumanLocating3.png)
 
 Waveshare IMX219-83 Stereo Camera uses a dual-camera system that can estimate depth and width, which helps locate The Arducam IMX477 HQ Camera is compatible with the Jetson Nano. The camera supports interchangeable lenses and has a field of view of 65 degrees. It has 12.3 megapixels. This camera improves image detail for identifying people in the captured footage. 
 * **Pros:** Compatible with Jetson Nano. Higher image resolution. Improves visual tracking and human detection. Interchangeable lenses.
@@ -794,7 +794,7 @@ To successfully transmit data from the Jetson nano to a personal laptop, Allison
 
 **EDIMAX N150**
 
-![EDIMAX N150](ConceptualDesignPictures/DataTransfer1.png)
+![EDIMAX N150](/Reports/Conceptual%20Design/ConceptualDesignPictures/DataTransfer1.png)
 
 Supports both Wi-Fi and Bluetooth connections that are compatible with the Jetson nano. It operates with speeds up to 150Mbps. It comes with built-in network security and is compatible with both Windows and Linux. The range for the EDIMAX N150 is 10-30 meters. It is capable of transmitting radar data, camera feed, and microphone data.  
 * *Pros:* Jetson Nano compatible, does not require bulky aftermarket attachments, lightweight
@@ -802,7 +802,7 @@ Supports both Wi-Fi and Bluetooth connections that are compatible with the Jetso
 
 **Intel AC8265 Wireless NIC**
 
-![Intel AC8265](ConceptualDesignPictures/DataTransfer2.png)
+![Intel AC8265](/Reports/Conceptual%20Design/ConceptualDesignPictures/DataTransfer2.png)
 
 Supports both Wi-fi and Bluetooth connections that are compatible with the Jetson nano. It operates at speeds of 300Mbps at 2.3GHz. The range for the Intel AC8265 Wireless NIC is typically 30-50 meters. It can transmit radar data, camera feed, and microphone data. It also has integrated network security.  
 * *Pros:* Jetson Nano compatible, lightweight.
@@ -810,7 +810,7 @@ Supports both Wi-fi and Bluetooth connections that are compatible with the Jetso
 
 **GNSS Expansion Board Module**
 
-![GNSS](ConceptualDesignPictures/DataTransfer3.png)
+![GNSS](/Reports/Conceptual%20Design/ConceptualDesignPictures/DataTransfer3.png)
 
 Supports 4G cellular communication and is compatible with the Jetson nano. The range is 5000 meters. Is capable of transmitting video, microphone, and radar data over very long distances. This option is significantly more complicated to integrate with our current system. The component itself will reduce our available payload compared to other options.  
 * *Pros:* Long range
@@ -818,7 +818,7 @@ Supports 4G cellular communication and is compatible with the Jetson nano. The r
 
 **LoRa (Long Range Radio)**
 
-![LoRa](ConceptualDesignPictures/DataTransfer4.png)
+![LoRa](/Reports/Conceptual%20Design/ConceptualDesignPictures/DataTransfer4.png)
 
 Supports long range radio communication that is suitable for sending images in clusters. This will allow the camera feed to be transmitted over long distances. The range is 300 meters. This gives the longest range with the lowest cost. It can transmit microphone, radar, and video. The video feed would be grey scale and sent in small clusters. 
 * *Pros:* Long range, low cost, lightweight.
@@ -834,14 +834,14 @@ Communication with the victim is a central component of this project. To identif
 
 **ReSpeaker 4-Mic Array (UAC 1.0 - Default)** 
 
-![UAC 1.0](ConceptualDesignPictures/HumanCommunication1.png)
+![UAC 1.0](/Reports/Conceptual%20Design/ConceptualDesignPictures/HumanCommunication1.png)
 
 The Seeed Studio ReSpeaker 4-Mic Array is a low-power USB microphone array. It features embedded audio processing, voice capture, sound direction detection, and noise suppression. These capabilities are well suited to communicating with potential victims.     
 * *Pros:* Has 4 mics to support audio capture and sound direction. Uses USB, so it is compatible with most computing platforms. Has features to suppress unwanted noise and boost voices. Low power consumption.
 * *Cons:* Internal filtering might not be sufficient to reduce drone noise. Speech recognition could be used but would require additional software. A speaker is needed to enable two-way communication.
 **ReSpeaker USB 4-Mic Array XVF3800**
 
-![XVF3800](ConceptualDesignPictures/HumanCommunication2.png)
+![XVF3800](/Reports/Conceptual%20Design/ConceptualDesignPictures/HumanCommunication2.png)
 
 The ReSpeaker XMOS XVF3800 is an updated version of the ReSpeaker 4-Mic Array. It features onboard audio processing, 360-degree voice pickup, echo cancellation, voice activity detection, and noise suppression. 
 * *Pros:* It offers 360-degree sound pickup and sound-source localization to help identify a person’s location. It can pick up voices from up to 5 m away and connect via USB or I2S. It also features echo cancellation and noise suppression.   
@@ -849,14 +849,14 @@ The ReSpeaker XMOS XVF3800 is an updated version of the ReSpeaker 4-Mic Array. I
 
 **RØDE VideoMic Go II:**
   
-![RØDE VideoMic](ConceptualDesignPictures/HumanCommunication3.png)
+![RØDE VideoMic](/Reports/Conceptual%20Design/ConceptualDesignPictures/HumanCommunication3.png)
   
 The VideoMic Go II is a compact, lightweight directional microphone with USB-C digital and 3.5mm analog outputs. It also offers advanced features, including powerful digital processing and pickup pattern options. 
 * *Pros:* The microphone primarily picks up sound from the direction it’s pointed. It is lightweight, includes a windshield, and connects via USB.
 * *Cons:* It is expensive. Since it is close to the drone, it may still pick up the drone’s noise. It would also require additional software to run on a Jetson Nano and must be aimed at the victim to capture their voice clearly.
 **2831/3128 Mini Full-Range Cavity Speaker**
   
-![2831/3128](ConceptualDesignPictures/HumanCommunication4.png)
+![2831/3128](/Reports/Conceptual%20Design/ConceptualDesignPictures/HumanCommunication4.png)
 
 The 2831/3128 mini full-cavity speaker is a compact output speaker designed for tight spaces. 
 * *Pros:* It is compact and lightweight, consumes little power, and its full-range design makes it ideal for voice instructions.
@@ -864,7 +864,7 @@ The 2831/3128 mini full-cavity speaker is a compact output speaker designed for 
 
 **Yahboom USB Sound Card & Speaker**
 
-![Yahboom USB](ConceptualDesignPictures/HumanCommunication5.png)
+![Yahboom USB](/Reports/Conceptual%20Design/ConceptualDesignPictures/HumanCommunication5.png)
 
 The Yaboom USB sound card and speaker kit is an excellent choice for audio output. It works with the Jetson Nano and Yaboom Camera without additional components and is reasonably priced. 
 * *Pros:* Designed for the Jetson Nano, it’s compact, budget-friendly, and requires no additional software or components.
@@ -915,18 +915,18 @@ Most major components are already owned by the team, including the X4, Jetson Na
 ---
 
 ### A. Hardware Block Diagram
-![Main](ConceptualDesignPictures/HardwareBlock1.png)
+![Main](/Reports/Conceptual%20Design/ConceptualDesignPictures/HardwareBlock1.png)
 
-![Computer](ConceptualDesignPictures/HardwareBlock2.png)
+![Computer](/Reports/Conceptual%20Design/ConceptualDesignPictures/HardwareBlock2.png)
 
-![Drone](ConceptualDesignPictures/HardwareBlock3.png)
+![Drone](/Reports/Conceptual%20Design/ConceptualDesignPictures/HardwareBlock3.png)
 
 The above hardware block diagrams, created in Canva, center on the drone and the computer. The diagrams visually break down the primary subsystems, focusing on communication paths between the components. Any analog signal is converted to a digital signal, and the power supply for each main system powers that entire system. The controller is omitted from the diagram due to the lack of planned modifications.
 
 ### B. Operational Flow Chart
-![Operational Flow](ConceptualDesignPictures/OperationalFlow1.png)
+![Operational Flow](/Reports/Conceptual%20Design/ConceptualDesignPictures/OperationalFlow1.png)
 
-![Power Monitoring](ConceptualDesignPictures/OperationalFlow2.png)
+![Power Monitoring](/Reports/Conceptual%20Design/ConceptualDesignPictures/OperationalFlow2.png)
 
 ---
 
@@ -965,7 +965,7 @@ The specifications for the subsystem are as follows:
 
 **Flowchart**
 
-![Drone Flowchart](ConceptualDesignPictures/DroneFlow.png)
+![Drone Flowchart](/Reports/Conceptual%20Design/ConceptualDesignPictures/DroneFlow.png)
 
 **Applicable Standards** 
 
@@ -1020,7 +1020,7 @@ The specifications for the subsystem are as follows:
 
 **Flowchart**
 
-![Power & Circuitry Design Flowchart](ConceptualDesignPictures/PowerFlow.png)
+![Power & Circuitry Design Flowchart](/Reports/Conceptual%20Design/ConceptualDesignPictures/PowerFlow.png)
 
 **Applicable Standards** 
 
@@ -1061,7 +1061,7 @@ The specifications for the subsystem are as follows:
 
 **Flowchart**
 
-![Signal Processing Flowchart](ConceptualDesignPictures/SignalProcessingFlow.png)
+![Signal Processing Flowchart](/Reports/Conceptual%20Design/ConceptualDesignPictures/SignalProcessingFlow.png)
 
 **Applicable Standards** 
 
@@ -1096,7 +1096,7 @@ The specifications for the subsystem are as follows:
 
 **Flowchart**
 
-![Interfacing Flowchart](ConceptualDesignPictures/InterfacingFlow.png)
+![Interfacing Flowchart](/Reports/Conceptual%20Design/ConceptualDesignPictures/InterfacingFlow.png)
 
 **Applicable Standards** 
 
@@ -1130,7 +1130,7 @@ The specifications for the subsystem are as follows:
 
 **Flowchart**
 
-![Human Detection Flowchart](ConceptualDesignPictures/HumanDetectionFlow.PNG)
+![Human Detection Flowchart](/Reports/Conceptual%20Design/ConceptualDesignPictures/HumanDetectionFlow.PNG)
 
 **Applicable Standards** 
 
@@ -1164,7 +1164,7 @@ The specifications for the subsystem are as follows:
 
 **Flowchart**
 
-![Vital Sensing Flowchart](ConceptualDesignPictures/VitalSensingFlow.png)
+![Vital Sensing Flowchart](/Reports/Conceptual%20Design/ConceptualDesignPictures/VitalSensingFlow.png)
 
 **Applicable Standards** 
 
@@ -1199,7 +1199,7 @@ The specifications for the subsystem are as follows:
 
 **Flowchart**
 
-![Human Communication Flowchart](ConceptualDesignPictures/HumanCommunicationFlow.png)
+![Human Communication Flowchart](/Reports/Conceptual%20Design/ConceptualDesignPictures/HumanCommunicationFlow.png)
 
 **Applicable Standards** 
 
@@ -1346,7 +1346,7 @@ If new subsystems develop or a team members' expertise is better aligned with an
 ---
 
 ### C. Timeline
-![Gantt Chart](ConceptualDesignPictures/Timeline.png)
+![Gantt Chart](/Reports/Conceptual%20Design/ConceptualDesignPictures/Timeline.png)
 
 ---
 
