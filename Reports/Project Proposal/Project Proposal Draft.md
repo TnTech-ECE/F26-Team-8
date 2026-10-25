@@ -148,6 +148,19 @@ Radar-based non-contact vital sign monitoring comes with many different consider
 * Implementing onboard processing to reduce latency and improve real-time responsiveness.
 * Proper data handling to follow HIPAA regulations and information privacy laws.
 
+#### Example: Autonomous Healthcare and NASA Wireless Heartbeat and Breathing Detection using Radar
+At Stevens Institute for Technology, they have done research with Autonomous Healthcare and NASA to research vital sign monitoring with radars and AI. The system includes 3D color camera images and scanning to gain accurate vital sign readings. They use a continuous wave radar that focuses on the beam to get the best possible reading [41]. 
+
+* **Benefits:**
+  * This system gathers very accurate vital sign data readings.
+  * This research is extremely applicable to the team's project as it covers the main specifications in the project.  
+* **Drawbacks:**
+  * For our team the Texas Instruments radar would be more expensive than our current solution.
+  * Due to our limited power this solution may not work.  
+
+#### Key Takeaways
+* A directional radar is best to get the most accurate readings.
+
 ### B. Image Processing 
 #### General Overview 
 The image processing system needs to improve the images captured by the drone. Reliable images are important for helping the search team identify victims during emergency situations. To achieve this, the camera needs to capture clear, high-quality images and video. When weather or lighting conditions affect image quality, image enhancement may be used to improve visibility. The system must also process images promptly so the search team can receive information while emergencies are taking place. The image processing system needs to be compatible with the rest of the components in the system. Weather and other environmental conditions can limit the ability to capture clear images and identify victims accurately. 
@@ -269,7 +282,8 @@ The company Everdrone operates drones used to aid first responders in emergencie
   * The human to machine relationship needs to be considered when implementing this into a community. People may be less likely to recognize it as "help" when compared to first responders.  
 
 #### Key Takeaways
-Cellular communication is the ideal form of wireless communication because of the long range. When the team is designing our solution, it is important for us to take into consideration the human-machine relationship.  
+* Cellular communication is the ideal form of wireless communication because of the long range.
+* When the team is designing our solution, it is important for us to take into consideration the human-machine relationship.  
 
 ---
 
