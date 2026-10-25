@@ -228,6 +228,24 @@ The Aurelia X4 must carry every added component and still complete the mission. 
 * Hovering victim assessment draws heavily on the battery, so sensing time must be included in the energy budget.
 * Power wiring must be routed and shielded, so motor and converter noise do not interfere with the radar or audio signals.
 
+#### Example: Onboard Computing and Flight Energy in Autonomous Drones
+Boroujerdian et al. [40] studied how the onboard computer affects the battery life and flight time of autonomous drones. They ran five mission workloads, including search and rescue, on an NVIDIA Jetson TX2 companion computer. They measured how much power the computer drew compared with the rotors, and how processing speed changed total mission time and energy. 
+
+* **Benefits:**
+  * The onboard computer drew less than 5% of total system power, averaging about 10 W against roughly 300–400 W for the rotors. This suggests the Jetson Nano’s own draw is a small part of the overall energy budget.
+  * Faster processing cut hover time spent waiting on decisions and let the drone fly faster safely. In the search-and-rescue workload, mission time dropped by up to 67% and energy use by up to 57% [40].
+  * Adjusting processing to the environment (lower detail in open areas, higher detail near obstacles) improved battery use by up to 1.8× [40]. 
+* **Drawbacks:**
+  * The results come from simulation, so real-world factors like voltage drops during take-off and wind gusts were not captured [40].
+  * The study did not measure how the added weight of the computer and sensors affects flight time [40]. That is a major concern for a payload close to the X4’s 3.3 lb limit.
+  * Noisy sensor data increased mission time by up to 90% and caused mission failures [40]. Shielding power wiring from motor and converter noise is therefore needed to protect the radar and audio signals. 
+
+#### Key Takeaways
+* The rotors dominate energy use. Total mission time and payload weight should be the main focus of the power budget, rather than the Jetson Nano’s draw alone.
+* The Jetson Nano’s 10 W mode may extend usable flight time, because faster processing shortens hovering during victim assessment, even though it draws more power than the 5 W mode.
+* Hover time for sensing and processing must be included in the energy budget [40].
+* Bench measurements on the actual X4 are still needed to confirm these simulated results. 
+
 ### F. Communications
 #### General Overview
 Adequate data needs to be transmitted to perform triage properly. This is accomplished through the use of the Jetson nano and multiple sensors to gather the data for a certain victim. The Jetson nano can use Bluetooth, Wifi, Ethernet, Cellular, LoRa (long range, low bandwidth IoT) to transmit data over a variety of distances. To accommodate all the sensors for the team's design, they will need a bandwidth of about 17 Mbps.  
