@@ -173,6 +173,24 @@ The image processing system needs to improve the images captured by the drone. R
 * Environmental restraints such as dust, rain, and physical obstructions can reduce image quality and disrupt image enhancement. 
 * Images must be processed quickly enough to provide useful information during search-and-rescue operations.
 
+#### Example: Satellite and Remote Sensing for Search and Rescue
+Remote sensing and satellite imaging capture aerial images and help locate potential hazards using image enhancement technologies and computer vision. This technology will identify people and assess the danger zone. For this project, satellite and remote sensing would help the drone better assess the disaster situation in real time, supporting first responders. 
+
+* **Benefits:**
+  * Would provide clear, timely images of the surrounding area.
+  * Would provide first responders with real-time video during search efforts.
+  * Would use image enhancement and computer vision technologies to locate potential victims.
+  * Would provide first responders with additional information about hazardous areas. 
+* **Drawbacks:**
+  * Adverse weather conditions may compromise image quality.
+  * Processing delays may occur during time-sensitive periods.
+  * Processing high-resolution images may be impaired if sufficient computing power and electrical energy are unavailable. 
+
+#### Key Takeaways
+* Image enhancement could improve visibility; however, it would not eliminate all environmental limitations.
+* The image-processing subsystem could be readily integrated with the communication and human-detection subsystems to provide first responders with useful information.
+* Image enhancement could support high-resolution imaging, which could assist in locating victims. 
+
 ### C. Deep Learning for Object Detection
 #### General Overview
 To perform effective search and rescue (SAR) operations without high-bandwidth video surveillance, autonomous systems use onboard deep learning models such as YOLO (You Only Look Once) to identify potential victims that may be obscured by surrounding objects. Incorporating such a model on computing platforms like the Jetson Nano enables precision diagnostic capabilities that are critical for time-sensitive operations [16].
